@@ -325,7 +325,7 @@
                                 <div class="swiper events-Swiper h-100 pb-8">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide" ng-repeat="item in events | limitTo: eventsLimitTo">
-                                            <a href="#" class="card events-card">
+                                            <a ng-href="events-content-template.html?urlQuery={{item.id}}" class="card events-card">
                                                 <div class="card-img">
                                                     <img ng-src="{{'images/' + item.image}}" alt="">
                                                 </div>
