@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TG1WB7W2Y3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TG1WB7W2Y3');
+</script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIVAS端點弱點評鑑系統-協助企業弱點資產盤點- uniXecure智慧資安科技</title>
+    <meta name="description" content="藉由自動化之系統，處理大量資產盤點、弱點管控與追蹤之工作，節省人力。提供軟體資產列表、安全性更新紀錄、設備列表等功能，將資訊資產清冊與弱點資料庫比對，藉由漏洞修補與版本更新，降低主機弱點被入侵的機會，並自動與技服中心政府機關資安弱點通報機制（VANS）平台介接，落實資安法之資產盤點與風險評估的應辦事項，提升機關或企業整體資安強度，協助符合資安法之要求"><meta name="keywords" content="資訊資產盤點,VANS API,漏洞管理,弱點監控,弱點資料庫,外部情資"><link rel="icon" href="favicon.ico"><script defer src="javascript/main.js?141a049f"></script><link href="css/style.css?52e1d36c" rel="stylesheet"></head>
+    <body>        
+        <!-- main starts -->
+        <main class="main d-flex flex-column">
+            <!-- headerc starts -->
+            <header class="header">
+                <nav>
+                    <div class="wrapper">
+                        <div class="logo">
+                            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                        </div>
+                        <div class="navbar">
+                            <ul>
+                                <li>
+                                    <a href="#">關於我們 <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">關於我們</p>
+                                                <ul>
+                                                    <li><a href="Introduction.html">公司簡介</a></li>
+                                                    <li><a href="solution-white-paper.html">報告書專區</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="active">服務項目 <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">資安監控維運中心</p>
+                                                <ul>
+                                                    <li><a href="serve-moc.html">MOC 資安監控維運中心</a></li>
+                                                </ul>
+                                                <p class="mb-3">端點防護</p>
+                                                <ul>
+                                                    <li><a href="serve-sivas.html">SIVAS 資安弱點通報系統</a></li>
+                                                    <!-- <li><a href="edr.html">EDR 端點資安管控監管平台</a></li> -->
+                                                    <!-- <li><a href="ssc.html">SSC 政府組態基準檢測系統</a></li> -->
+                                                </ul>
+                                                <p class="mb-3">中心端監控</p>
+                                                <ul>
+                                                    <li><a href="serve-srmas.html">SRMAS 系統資源監控管理平台</a></li>
+                                                    <!-- <li><a href="soc.html">SOC 資通安全威脅偵測管理</a></li> -->
+                                                    <li><a href="serve-lucas.html">LUCAS 跡證保存系統</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">人員資安意識： HEIS 資安意識人因分析系統</p>
+                                                <ul>
+                                                    <li><a href="serve-heis.html">HEIS 資安意識人因分析系統</a></li>
+                                                    <li><a href="serve-sesc.html">SESC 次世代郵件安全雲</a></li>
+                                                </ul>
+                                                <p class="mb-3">資安服務</p>
+                                                <ul>
+                                                    <li><a href="serve-cse.html">資安健診</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>                                       
+                                    </div>
+                                </li>
+                                <li><a href="agent-products-index.html">代理產品</a></li>
+                                <li>
+                                    <a href="#">最新消息 <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">最新消息</p>
+                                                <ul>
+                                                    <li><a href="news.html">最新消息</a></li>
+                                                    <!-- <li><a href="video.html">影音專區</a></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="contact.html">聯絡我們</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="login-language d-flex align-items-center">
+                        <!-- <a href="#" class="link-primary"><i class="fa-solid fa-user"></i> 會員登入</a> -->
+                        <div class="language-container">
+                            <a href="#" class="language-btn ml-3 fa-sharp fa-solid fa-globe"></a>
+                            <ul class="language">
+                                <li><a href="index.html" class="active">繁體中文</a></li>
+                                <li><a href="index-en.html">English</a></li>
+                                <li><a href="index-ja.html">日本語</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="toggle-navbar ml-3 fa-solid fa-bars"></a>
+                    </div>
+                </nav>
+            </header>
+            <!-- headerc ends -->
+            <!-- content starts -->
+            <div class="content flex-grow-1">
+                <!-- header starts -->
+                <section class="service-banner">
+                    <div>
+                        <div class="service-banner-content">
+                            <h1 class="text-primary mb-2">SIVAS<br /> 資安弱點通報系統</h1>
+                            <h2 class="text-primary mb-4">Systex Inventory Vulnerability Alert System</h2>
+                            <p class="mb-4">針對公務機關及一般企業，提供軟體資產列表、安全性更新紀錄、設備列表等功能，將資訊資產清冊與弱點資料庫比對，藉由漏洞修補與版本更新，降低主機弱點被入侵的機會，並自動與技服中心政府機關資安弱點通報機制（VANS）平台介接，落實資安法之資產盤點與風險評估的應辦事項，提升機關或企業整體資安強度，協助符合資安法之要求。</p>
+                            <a href="contact.html" class="link-primary">聯絡我們</a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/sivas-banner.png" alt="" class="w-100">
+                    </div>
+                </section>
+                <!-- header ends -->
+                <!-- content starts -->
+                <section class="page-content pt-0">
+                    <!-- starts -->
+                    <section class="section bg-gray-50">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-primary-800 text-center mb-5">為什麼要做弱點資產盤點？當資安事件發生時：</h2>
+                                    <div class="mb-4">
+                                        <h3 class="text-primary mb-2">無法全面得知弱點分布範圍</h3>
+                                        <p>企業內設備無定期的進行弱點更新之習慣</p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <h3 class="text-primary mb-2">無法判斷哪些資產弱點會造成哪些危害</h3>
+                                        <p>缺乏資產弱點監控機制，導致無法掌握設備弱點脆弱性的現況
+                                        </p>
+                                    </div>
+                                    <div class="mb-4">
+                                        <h3 class="text-primary mb-2">無法即時偵測弱點並修補漏洞，導致無法即時對症下藥找出入侵源頭。</h3>
+                                        <p>人力或專業知識不足，無法管理與監控大範圍的資產現況，包含：預算不足、無法進行 7X24 或 5X8 之監控</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ends -->
+                    <!-- starts -->
+                    <section class="section circle-xs-bg-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-primary-800 text-center mb-5">因此，資安弱點掃描必須「知己、知彼」，才能「百戰不殆」！</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md">
+                                    <div class="rounded-1 bg-primary-600 p-3 h-100 text-center">
+                                        <h3 class="text-secondary mb-2">知己</h3>
+                                        <p class="text-white">盤點內部軟體資產總表與端點健康狀況總表</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto">
+                                    <div class="h-100 py-4 py-md-0 d-flex justify-content-center align-items-center"><i class="fa-solid fa-plus text-primary-700 fs-1"></i></div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="rounded-1 bg-primary-600 p-3 h-100 text-center">
+                                        <h3 class="text-secondary mb-2">知彼</h3>
+                                        <p class="text-white">與 MOC 自有 CVE 漏洞，進行自動弱點比對、檢測、回覆</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <div class="py-4 d-flex justify-content-center"><i class="fa-solid fa-equals text-primary-700 fs-1 rotate-90"></i></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="rounded-1 bg-primary-50 py-5">
+                                        <h3 class="text-primary text-center mb-3">百戰不殆</h3>
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <figure>
+                                                    <img src="images/sivas-icon1.png" alt="">
+                                                </figure>
+                                                <h4>潛在弱點偵測弱點範圍掌控</h4>
+                                                <p>監控是否有被威脅感染</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="h-100 d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right text-secondary fs-1"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col text-center">
+                                                <figure>
+                                                    <img src="images/sivas-icon2.png" alt="">
+                                                </figure>
+                                                <h4>漏洞修補作業</h4>
+                                                <p>確保排除威脅</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="d-flex justify-content-center py-5">
+                                                    <i class="fa-solid fa-arrow-up text-secondary fs-1"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="d-flex justify-content-center py-5">
+                                                    <i class="fa-solid fa-arrow-down text-secondary fs-1"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <figure>
+                                                    <img src="images/sivas-icon4.png" alt="">
+                                                </figure>
+                                                <h4>端點資料搜集資產盤點</h4>
+                                                <p>偵測是否有新的威脅</p>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="h-100 d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-left text-secondary fs-1"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col text-center">
+                                                <figure>
+                                                    <img src="images/sivas-icon3.png" alt="">
+                                                </figure>
+                                                <h4>弱點後續追蹤</h4>
+                                                <p>追蹤威脅是否又發生</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ends -->
+                    <!-- starts -->
+                    <section class="section service-content-circle-bg">
+                        <div class="service-content-circle-bg-two"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-primary-800 text-center mb-5">藉由自動化之系統，處理大量資產盤點、弱點管控與追蹤之工作，節省人力。</h2>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="bg-white rounded-1 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary mb-3">資產盤點</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="bg-white h-100 rounded-1 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary text-center">資料正規化</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="bg-white rounded-1 h-100 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary text-center">CPE 轉換器</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="bg-white rounded-1 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary mb-3">VANS API</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="bg-white h-100 rounded-1 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary text-center">統計報表</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="bg-white rounded-1 h-100 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary text-center">排程管理</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="bg-white rounded-1 h-100 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary text-center">弱點資料庫</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="bg-white rounded-1 h-100 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary text-center">弱點檢測</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="bg-white rounded-1 h-100 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary text-center">弱點 DB 更新</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="bg-white rounded-1 h-100 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary text-center">告警通知</h2>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="bg-white rounded-1 h-100 py-4 px-3 d-flex justify-content-center align-items-center">
+                                        <h2 class="text-primary text-center">視覺化介面</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ends -->
+                    <!-- starts -->
+                    <section class="section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-primary-800 text-center mb-5">SIVAS 資安弱點通報系統具體效益</h2>
+                                </div>
+                            </div>
+                            <div class="row flex-column flex-md-row flex-column-reverse align-items-center mb-7">
+                                <div class="col-md-6">
+                                    <h4 class="text-primary mb-2">輕鬆盤點資訊資產清單</h4>
+                                    <p>將軟體資產轉換為標準 CPE 格式進行資產弱點比對，定期提供弱點比對後之統計圖表，並依風險等級進行告警通知。</p>
+                                </div>
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <img src="images/sivas-img1.png" alt="" class="img-size-500">
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-7">
+                                <div class="col-md-6  mb-4 mb-md-0 text-right">
+                                    <img src="images/sivas-img2.png" alt="" class="img-size-500">
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="text-primary mb-2">弱點偵測與範圍掌控</h4>
+                                    <p>檢視各資訊資產潛在之弱點，於弱點發佈後，迅速反應所面臨的威脅與受影響的版本，並掌握弱點影響的範圍，確保弱點可控性。</p>
+                                </div>
+                            </div>
+                            <div class="row flex-column flex-md-row flex-column-reverse align-items-center mb-7">
+                                <div class="col-md-6">
+                                    <h4 class="text-primary mb-2">修補漏洞與追蹤弱點</h4>
+                                    <p>發現弱點並協助用戶快速進行應變處理，含更新 Patch、停用服務運作、諮詢服務等。並持續追蹤弱點修補情形，維持資料內容的有效性，降低弱點管控成本。</p>
+                                </div>
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <img src="images/sivas-img3.png" alt="" class="img-size-500">
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-md-6 mb-4 mb-md-0 text-right">
+                                    <img src="images/sivas-img4.png" alt="" class="img-size-500">
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="text-primary mb-2">上傳 VANS 快速符規</h4>
+                                    <p>透過 API 自動上傳 VANS，亦7可自行匯出資產報表調整後手動上傳，以便落實資安法之資產盤點與風險評估的應辦事項。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ends -->
+                    <!--  -->
+                    <section class="section circle-xs-bg-primary-50" id="shopping">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-9 mx-auto">
+                                    <h2 class="text-primary-800 mb-4 text-center">選擇你的方案</h2>
+                                    <div class="sivas-shopping-card">
+                                        <h3 class="text-primary mb-4 text-center">SIVAS 端點弱點評鑑系統</h3>
+                                        <dl class="row">
+                                            <dt class="col-sm-3">作業環境</dt>
+                                            <dd class="col-sm-9">僅支援 Windows10、Windows Server 2012 以上。</dd>
+                                            <dt class="col-sm-3">設備需求</dt>
+                                            <dd class="col-sm-9">100GB 儲存空間、16G RAM。</dd>
+                                            <dt class="col-sm-3">使用期限</dt>
+                                            <dd class="col-sm-9">12 個月</dd>
+                                            <dt class="col-sm-3">技術支援</dt>
+                                            <dd class="col-sm-9">包含</dd>
+                                            <dt class="col-sm-3">計價方式</dt>
+                                            <dd class="col-sm-9">10-100 套，NT$10/U；110-500 套，NT$18/U；510+ 套，NT$15/U。</dd>
+                                        </dl>
+                                        <div class="text-center">
+                                            <a href="#" target="_blank" class="shopping-link">我要購買<i class="fa-solid fa-cart-shopping"></i></a>
+                                        </div>
+                                        <p class="text-center text-gray-500 mt-5">欲詢問方案相關疑問，歡迎<a href="contact.html">聯絡我們</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--  -->
+                </section>
+                <!-- contents ends -->
+            </div>
+            <!-- content ends -->
+            <!-- footer starts -->
+            <footer class="footer">
+                <!-- contact starts -->
+                <section class="footer-contact">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="text-right d-none d-md-block">Contact</h1>
+                                <div class="contact">
+                                    <div class="contact-bg"></div>
+                                    <div>企業方案 IT 服務 / 解決方案諮詢<br />歡迎聯繫智慧資安</div>
+                                    <a href="contact.html" class="link-secondary">關於我們</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- contact ends -->
+                <!-- content starts -->
+                <section class="footer-content my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center">
+                                    <div class="mb-3">
+                                        <img src="images/footer-logo.png" alt="">
+                                    </div>
+                                    <div class="shart">
+                                        <a href="https://www.youtube.com/@unixecure3203" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="https://www.facebook.com/uniXecure/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <!-- <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a> -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="d-flex  flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">服務信箱</div>
+                                    <div><a href="mailto:servicedesk@unixecure.com.tw" class="footer-mail">servicedesk@unixecure.com.tw</a></div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">臺北辦公室</div>
+                                    <div class="mr-3">114 臺北市內湖區基湖路 35 巷 13 號巴黎科技大樓 8 樓 <a href="https://goo.gl/maps/LDBJQvJMV3gkNSGAA" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>電話：02-8798-6088</div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">臺中辦公室</div>
+                                    <div class="mr-3">407 臺中市西屯區台灣大道 3 段 660 號 6 樓之 3 <a href="https://goo.gl/maps/8FYsL5VeEQhXjuxH6" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>電話：04-24523928 分機 300、301、302</div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">臺南辦公室</div>
+                                    <div class="mr-3">711 臺南市歸仁區歸仁十三路一段６號 3 樓 B309 室 <a href="https://goo.gl/maps/SK5XkyW9DXzEFPx39" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>電話：06-3033-018</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-md-row justify-content-between">
+                                    <a href="copyright-privacy.html" class="copyright">著作權及隱私權聲明</a>
+                                    <div><span class="mr-3">精誠集團</span>智慧資安科技股份有限公司 © <span class="year"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- content ends -->
+            </footer>
+            <!-- footer ends -->
+        </main>
+        <!-- main ends -->
+        <!-- go top -->
+        <a href="#" class="btn gotop">
+            <i class="fa-solid fa-arrow-up-long"></i>
+        </a>
+    </body>
+</html>

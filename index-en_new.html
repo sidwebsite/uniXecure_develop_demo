@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="getAppController" lang="en-US">
+    <head>
+        <meta charset="utf-8"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TG1WB7W2Y3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TG1WB7W2Y3');
+</script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>unixecure</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/main.js?141a049f"></script><script defer src="javascript/index_new.js?05cecb7b"></script><script defer src="javascript/modal.js?2c369897"></script><script defer src="javascript/jsonData.js?eb71ea47"></script><link href="css/style.css?52e1d36c" rel="stylesheet"></head>
+    <body>        
+        <!-- main starts -->
+        <main class="main d-flex flex-column">
+            <!-- headerc starts -->
+            <header class="header">
+                <nav>
+                    <div class="wrapper">
+                        <div class="logo">
+                            <a href="index-en.html"><img src="images/logo.png" alt="logo"></a>
+                        </div>
+                        <div class="navbar">
+                            <ul>
+                                <li>
+                                    <a href="#">About us <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">About us</p>
+                                                <ul>
+                                                    <li><a href="Introduction-en.html">Company Profile</a></li>
+                                                    <!-- <li><a href="certification-en.html">Professional Certification</a></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Service <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">Monitoring and Operation Center</p>
+                                                <ul>
+                                                    <li><a href="moc-en.html">MOC Portal</a></li>
+                                                </ul>
+                                                <p class="mb-3">Endpoint Security</p>
+                                                <ul>
+                                                    <li><a href="sivas-en.html">SIVAS<br /><small class="small">Smart Inventory Vulnerability Alert System</small></a></li>
+                                                    <!-- <li><a href="edr-en.html">EDR<br />Endpoint detection and response mechanisms</a></li> -->
+                                                </ul>
+                                                <!-- <p class="mb-3">Central monitoring</p>
+                                                <ul>
+                                                    <li><a href="srmas-en.html">SRMAS<br /> <small class="small">Smart Resource Monitoring and Alerting System</small></a></li>
+                                                    <li><a href="#">LUCAS<br /> <small class="small">Log Unified Central Analysis System</small></a></li>
+                                                </ul> -->
+                                            </div>
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">Human Insight</p>
+                                                <ul>
+                                                    <li><a href="heis-en.html">HEIS<br /><small class="small">Human Error Insight System</small></a></li>
+                                                    <li><a href="sesc-en.html">SESC<br /><small class="small">Smart Email Security Cloud</small></a></li>
+                                                </ul>
+                                                <!-- <p class="mb-3">Security Service</p>
+                                                <ul>
+                                                    <li><a href="isms-en.html">資安健診</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">News <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">News</p>
+                                                <ul>
+                                                    <li><a href="news-en.html">News</a></li>
+                                                    <!-- <li><a href="video-en.html">Video library</a></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="contact-en.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="login-language d-flex align-items-center">
+                        <!-- <a href="#" class="link-primary"><i class="fa-solid fa-user"></i> 會員登入</a> -->
+                        <div class="language-container">
+                            <a href="#" class="language-btn ml-3 fa-sharp fa-solid fa-globe"></a>
+                            <ul class="language">
+                                <li><a href="index.html">繁體中文</a></li>
+                                <li><a href="index-en.html" class="active">English</a></li>
+                                <li><a href="index-ja.html">日本語</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="toggle-navbar ml-3 fa-solid fa-bars"></a>
+                    </div>
+                </nav>
+            </header>
+            <!-- headerc ends -->
+            <!-- content starts -->
+            <div class="content flex-grow-1">
+                <!-- banner starts -->
+                <section class="index-banner">
+                    <div class="text-center wow fadeIn">
+                        <h1 class="mb-4">Information Security Management Best Supplier</h1>
+                        <p class="mb-4">Global No.1 Information Security Products; Experience Experts; Statute Compliant IS Procedures</p>
+                        <div class="index-banner-link-group">
+                            <a href="contact-en.html" class="link-secondary">Contact Us</a>
+                            <a href="https://www.youtube.com/watch?v=hGjokgKoQfI&t=3s" class="link-primary fs-4 ml-4" target="_blank">Watch Video</a>
+                        </div>
+                        <div class="index-banner-image">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img src="images/index-banner-image.png" alt="" class="w-100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- banner ends -->
+                <!-- counting starts -->
+                <section class="section counting wow fadeIn">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="grid numder">
+                                    <div class="g-md-4 g-12 text-center">
+                                        <div class="d-inline-block">
+                                            <h1 class="mb-2"><span class="animate-number" data-target="60">0</span>+</h1>
+                                            <p>Own/Agency IS Tools</p>
+                                        </div>
+                                    </div>
+                                    <div class="g-md-4 g-12 text-center">
+                                        <div class="d-inline-block">
+                                            <h1 class="mb-2"><span class="animate-number" data-target="24">0</span>/7</h1>
+                                            <p>IS Monitoring</p>
+                                        </div>
+                                    </div>
+                                    <div class="g-md-4 g-12 text-center">
+                                        <div class="d-inline-block">
+                                            <h1 class="mb-2"><span class="animate-number" data-target="91">0</span>%</h1>
+                                            <p>IS Contract Renewal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-12 mx-auto">
+                                <article><p class="text-center lh-lg">UniXecure offers Information Security Management Cycles to provide one-stop IS services comprising [prevention before incidents, detection during incidents, and actions after incidents] that satisfy operation needs and realize IS requirements via 24/7 operation. These integrate people, technology, and procedures for resolving statutes compliance issues as well as the awkwardness of a lack of IS professionals. UniXecure works hand-in-hand with customers to confront worsening IS challenges, to protect their Information Security, and to assist them in developing core businesses without further concerns.</p></article>                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- counting ends -->
+                <!-- service starts -->
+                <section class="section service">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="title">
+                                    <h1 class="text-primary mb-4">Services</h1>
+                                    <!-- <span>Service</span> -->
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="moc d-flex justify-content-center wow fadeIn">
+                                    <a href="moc-en.html" class="box text-center">
+                                        <h1>MOC</h1>
+                                        <h3>MOC</h3>
+                                        <!-- <p class="px-2">Integrated Intelligence Management Platform</p> -->
+                                    </a>
+                                </div>
+                                <div class="service-box-container wow fadeIn">
+                                    <h3 class="ml-4">Management Level Insight</h3>
+                                    <div class="box-container d-flex justify-content-center flex-md-row flex-column align-items-center align-items-md-stretch">
+                                        <a href="sesc-en.html" class="box text-center">
+                                            <h3>SESC</h3>
+                                            <p class="px-2">Smart Email Security Cloud</p>
+                                        </a>
+                                        <a href="heis-en.html" class="box text-center">
+                                            <h3>HEIS</h3>
+                                            <p class="px-2">Human Error Insight System</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="service-box-container wow fadeIn">
+                                    <h3 class="ml-4">Border Control Parameters</h3>
+                                    <div class="box-container d-flex justify-content-center flex-md-row flex-column align-items-center align-items-md-stretch"">
+                                        <!-- <div class="box text-center">
+                                            <h3>SOC</h3>
+                                            <p class="px-2">Information Threat Detection Management</p>
+                                        </div> -->
+                                        <div class="box text-center">
+                                            <h3>SRMAS</h3>
+                                            <p class="px-2">Systex Resource Monitoring and Alerting System</p>
+                                        </div>
+                                        <div class="box text-center">
+                                            <h3>LUCAS</h3>
+                                            <p class="px-2">Log Unified Central Analysis System</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-box-container wow fadeIn">
+                                    <h3 class="ml-4">Terminal Control</h3>
+                                    <div class="box-container d-flex justify-content-center flex-md-row flex-column align-items-center align-items-md-stretch"">
+                                        <a href="sivas-en.html" class="box text-center">
+                                            <h3>SIVAS</h3>
+                                            <p class="px-2">Smart Inventory Vulnerability Alert System</p>
+                                        </a>
+                                        <div class="box text-center">
+                                            <h3>SSC</h3>
+                                            <p class="px-2">Smart Security Center</p>
+                                        </div>
+                                        <div class="box text-center">
+                                            <h3>EDR</h3>
+                                            <p class="px-2">Smart Endpoint Detection and Response Portal</p>
+                                        </div>
+                                        <div class="box text-center">
+                                            <h3>ISMS</h3>
+                                            <p class="px-2">Information Security Management System</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- service ends -->
+                <!-- Kanban starts -->
+                <section class="section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 mb-4 mb-md-0 wow slideInLeft">
+                                <h2 class="text-primary mb-4">Visualized IS Intelligence Signboard 24/7 Surveillance Over All Security Concerns</h2>
+                                <p class="lh-lg">The IS Intelligence Signboard MOC Portal integrates multiple information types and presents highly interactive visualization of IS-related monitoring data including traffic, log, anti-virus, anti-hacker, system resources (processor, memory, disk capacity, etc.), system configuration (GCB, safety update, software installation…) for providing IS alerts, events, and real-time charts that can assist the admin to take immediate action while monitoring the status of the entire process.</p>
+                            </div>
+                            <div class="col-md-6 wow slideInRight">
+                                <img src="images/Kanban.png" alt="" class="img-size-500">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Kanban ends -->
+                <!-- Certification start -->
+                <section class="section">
+                    <div class="container">
+                        <div class="row flex-md-row-reverse">
+                            <div class="col-md-6 mb-4 mb-md-0 wow slideInRight">
+                                <h2 class="text-primary mb-4">Multiple International Certificates, Trustworthy</h2>
+                                <p class="lh-lg">MOC IS Monitoring and Operation Center is ISO 20000, ISO 27001, and ISO 27701 certified; it also passed the connection test conducted by the Technical Service Center of the Executive Yuan for SOC suppliers. It supports G-SOC 1.0 and G-SOC 2.0; it also passed EDR connection tests.</p>
+                            </div>
+                            <div class="col-md-6 wow slideInLeft">
+                                <img src="images/Certification.png" alt="" class="img-size-500">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Certification ends -->
+                <!-- news starts -->
+                <section class="section bg-primary-50" ng-hide="news.length === 0">
+                    <div class="container wow fadeIn">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="index-news-title">
+                                    <h1 class="text-primary-600">NEWS</h1>
+                                    <span><img src="images/NEWS.png" alt=""></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="bg-white index-news-list">
+                                    <a href="#" class="card-news d-md-flex" ng-repeat="item in news | limitTo: newsLimitTo | orderBy:'date':reverse">
+                                        <div class="card-news-img pr-0 pr-md-4">
+                                            <figure>
+                                                <img ng-src="{{'images/' + item.image}}" alt="">
+                                            </figure>
+                                        </div>
+                                        <div class="card-news-body">
+                                            <span class="date">{{item.date}}</span>
+                                            <h4>{{item.title}}</h4>
+                                            <p>{{item.description}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <a href="#" class="link-outline-none-primary">More News<i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- news ends -->
+                <!-- events starts -->
+                <section class="section index-news" ng-hide="events.length === 0">
+                    <div class="index-news-circle"></div>
+                    <div class="container wow fadeIn">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="index-news-title">
+                                    <h1>EVENTS</h1>
+                                    <span><img src="images/EVENTS.png" alt=""></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 pb-6">
+                                <div class="swiper events-Swiper h-100 pb-8">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide" ng-repeat="item in events | limitTo: eventsLimitTo">
+                                            <a href="#" class="card events-card">
+                                                <div class="card-img">
+                                                    <img ng-src="{{'images/' + item.image}}" alt="">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div>
+                                                        <h3>{{item.title}}</h3>
+                                                        <p class="text">{{item.description}}</p>
+                                                    </div>
+                                                    <div>
+                                                        <span class="date"><strong>{{item.eventsDate}}</strong></span>
+                                                        <p>活動地點：{{item.eventsLocation}}</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>   
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="#" class="link-outline-none-primary">More Events <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- events ends -->
+                <!-- cases starts -->
+                <section class="section index-cases circle-xs-bg" ng-hide="cases.length === 0">
+                    <div class="container wow fadeIn">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="index-news-title">
+                                    <h1 class="text-gray-800">CASES</h1>
+                                    <span><img src="images/CASES.png" alt=""></span>
+                                </div>
+                            </div>
+                            <div class="col-12 pb-5">
+                                <div class="swiper cases-Swiper pb-8">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide" ng-repeat="slide in cases | limitTo: casesLimitTo">
+                                            <div class="bg-white px-3">
+                                                <a href="#" class="d-block">
+                                                    <div class="cases-card row">
+                                                        <div class="card-body col-lg">
+                                                            <div class="card-body-class">
+                                                                <span>{{slide.Industry}}</span>
+                                                                <ul ng-if="slide.product.length !== 0">
+                                                                    <li ng-repeat="li in slide.product">{{li}}</li>
+                                                                </ul>
+                                                            </div>
+                                                            <p class="company" ng-if="slide.company !== null">{{slide.company}}</p>
+                                                            <h3>{{slide.title}}</h3>
+                                                            <p class="text">{{slide.description}}</p>
+                                                        </div>
+                                                        <div class="card-img col-lg mb-3 mb-lg-0">
+                                                            <figure>
+                                                                <img ng-src="{{'images/' + slide.image}}" alt="">
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>   
+                            </div>
+                            <div class="col-12">
+                                <a href="#" class="link-outline-none-primary">More cases<i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- cases ends -->
+            </div>
+            <!-- content ends -->
+            <!-- footer starts -->
+            <footer class="footer">
+                <!-- contact starts -->
+                <section class="footer-contact">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="text-right d-none d-md-block">Contact</h1>
+                                <div class="contact">
+                                    <div class="contact-bg"></div>
+                                    <div>uniXecure brings you fast and professional service. Welcome to contact us.</div>
+                                    <a href="contact-en.html" class="link-secondary text-nowrap">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- contact ends -->
+                <!-- content starts -->
+                <section class="footer-content my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center">
+                                    <div class="mb-3">
+                                        <img src="images/footer-logo.png" alt="">
+                                    </div>
+                                    <div class="shart">
+                                        <a href="https://www.youtube.com/@unixecure3203" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="https://www.facebook.com/uniXecure/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <!-- <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a> -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="d-flex  flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">Service Email</div>
+                                    <div><a href="mailto:servicedesk@unixecure.com.tw" class="footer-mail">servicedesk@unixecure.com.tw</a></div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">Taipei office</div>
+                                    <div class="mr-3">8F., No. 13, Ln. 35, Jihu Rd., Neihu Dist., Taipei City 114 <a href="https://goo.gl/maps/Mo8VxQUrnwry2hLUA" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>Tel: +886 2-8798-608</div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">Taichung office</div>
+                                    <div class="mr-3">6F.-3, No. 660, Sec. 3, Taiwan Blvd., Xitun Dist., Taichung City 407 <a href="https://goo.gl/maps/AD9Bu6mcCvpzJvFX6" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>Tel: +886 4-24523928 ext 300、301、302</div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">Tainan office</div>
+                                    <div class="mr-3">Rm. B309, 3F., No. 6, Sec. 1, Guiren 13th Rd., Guiren Dist., Tainan City 711 <a href="https://goo.gl/maps/qSjmFiZxxo7ZSR197" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>Tel: +886 6-3033-018</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-md-row justify-content-between">
+                                    <a href="copyright-privacy-en.html" class="copyright">Copyright and Privacy Statement</a>
+                                    <div>SYSTEX uniXecure Corporation © <span class="year"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- content ends -->
+            </footer>
+            <!-- footer ends -->
+        </main>
+        <!-- main ends -->
+        <!-- go top -->
+        <a href="#" class="btn gotop">
+            <i class="fa-solid fa-arrow-up-long"></i>
+        </a>
+        <!--  -->
+    </body>
+</html>
