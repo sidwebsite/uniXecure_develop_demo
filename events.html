@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?7ca88161"></script><script defer src="javascript/angular-sanitize.js?4517b9d3"></script><script defer src="javascript/main.js?141a049f"></script><script defer src="javascript/jsonData.js?eb71ea47"></script><link href="css/style.css?52e1d36c" rel="stylesheet"></head>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?7ca88161"></script><script defer src="javascript/angular-sanitize.js?4517b9d3"></script><script defer src="javascript/main.js?141a049f"></script><script defer src="javascript/jsonData.js?913e1fbf"></script><link href="css/style.css?5f57a72b" rel="stylesheet"></head>
     <body>        
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -144,21 +144,24 @@
                             <div class="col-12">
                                 <a ng-href="events-content-template.html?urlQuery={{item.id}}" class="card events-card" ng-repeat="item in events" ng-if="$first == true">
                                     <div class="row">
-                                        <div class="card-img col-md mb-md-0">
-                                            <img ng-src="{{'images/' + item.image}}" alt="">
-                                        </div>
-                                        <div class="card-body col-md justify-content-center">
-                                            <div>
-                                                <h3>{{item.title}}</h3>
-                                                <p class="text">{{item.description}}</p>
+                                        <div class="col-md">
+                                            <div class="card-img mb-md-0">
+                                                <img ng-src="{{'images/' + item.image}}" alt="">
                                             </div>
-                                            <div>
-                                                <span class="date"><strong>活動日期：{{item.eventsDate}}</strong></span>
-                                                <p>活動地點：{{item.eventsLocation}}</p>
+                                        </div>
+                                        <div class="col-md">
+                                            <div class="card-body d-flex flex-column justify-content-center h-100">
+                                                <div>
+                                                    <h3>{{item.title}}</h3>
+                                                    <p class="text">{{item.description}}</p>
+                                                </div>
+                                                <div>
+                                                    <span class="date"><strong>活動日期：{{item.eventsDate}}</strong></span>
+                                                    <p>活動地點：{{item.eventsLocation}}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </a>
                             </div>
                         </div>

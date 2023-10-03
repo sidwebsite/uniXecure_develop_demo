@@ -11938,9 +11938,6 @@ nav .wrapper .navbar > ul > li .dropdown-menu ul li a {
   -webkit-transition: var(--base-transition);
   transition: var(--base-transition);
 }
-nav .wrapper .navbar > ul > li .dropdown-menu ul li a:hover {
-  left: 0;
-}
 nav .wrapper .navbar > ul > li .dropdown-menu::before {
   content: "";
   background-color: var(--gray-50);
@@ -12608,8 +12605,6 @@ nav .wrapper .navbar > ul > li .dropdown-menu::before {
           flex-direction: column;
 }
 .events-card .card-img {
-  height: auto;
-  padding-bottom: 0;
   overflow: hidden;
 }
 .events-card .card-img img {
