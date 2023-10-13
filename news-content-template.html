@@ -116,7 +116,7 @@
             <div class="content flex-grow-1 bg-gray-50"> 
                 <section  ng-repeat="item in news" ng-if="item.Id === urlIndex">
                     <!-- header starts -->
-                    <div class="d-lg-flex justify-content-between news-content-header bg-gray-800 page-header py-0" >
+                    <!-- <div class="d-lg-flex justify-content-between news-content-header bg-gray-800 page-header py-0" >
                         <div class="page-header-body pt-4 d-flex flex-column">
                             <nav class="h-auto">
                                 <ul class="breadcrumb news-breadcrumb">
@@ -133,6 +133,24 @@
                             <figure>
                                 <img ng-src="{{item.WebPic}}" alt="">
                             </figure>
+                        </div>
+                    </div> -->
+                    <div class="news-content-header bg-gray-800 page-header">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <nav class="h-auto">
+                                        <ul class="breadcrumb news-breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                            <li class="breadcrumb-item">最新消息</li>
+                                            <li class="breadcrumb-item active"><a href="news_new.html">新聞中心</a></li>
+                                        </ul>
+                                    </nav>
+                                    <div class="mb-5">
+                                        <h1 class="text-white">{{item.Name}}</h1>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- header ends -->
