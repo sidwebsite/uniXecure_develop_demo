@@ -11,8 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/main.js?141a049f"></script><script defer src="javascript/index_new.js?05cecb7b"></script><script defer src="javascript/modal.js?2c369897"></script><script defer src="javascript/jsonData.js?913e1fbf"></script><link href="css/style.css?5f57a72b" rel="stylesheet"></head>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/index_new.js?6309c541"></script><script defer src="javascript/modal.js?ee052a96"></script><script defer src="javascript/jsonData.js?7dc99123"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
     <body>        
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -281,16 +280,16 @@
                             </div>
                             <div class="col-12">
                                 <div class="bg-white index-news-list">
-                                    <a href="#" class="card-news d-md-flex" ng-repeat="item in news | limitTo: newsLimitTo | orderBy:'date':reverse">
+                                    <a href="#" class="card-news d-md-flex" ng-repeat="item in news | filter: {LanguageCode: lang} | limitTo: 3 | orderBy:'DataTime':reverse">
                                         <div class="card-news-img pr-0 pr-md-4">
                                             <figure>
-                                                <img ng-src="{{'images/' + item.image}}" alt="">
+                                                <img ng-src="{{item.WebPic}}" alt="">
                                             </figure>
                                         </div>
                                         <div class="card-news-body">
-                                            <span class="date">{{item.date}}</span>
-                                            <h4>{{item.title}}</h4>
-                                            <p>{{item.description}}</p>
+                                            <span class="date">{{item.DataTime}}</span>
+                                            <h4>{{item.Name}}</h4>
+                                            <p>{{item.Profile}}</p>
                                         </div>
                                     </a>
                                 </div>

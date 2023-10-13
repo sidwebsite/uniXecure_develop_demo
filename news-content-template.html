@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?7ca88161"></script><script defer src="javascript/angular-sanitize.js?4517b9d3"></script><script defer src="javascript/main.js?141a049f"></script><script defer src="javascript/jsonData.js?913e1fbf"></script><link href="css/style.css?5f57a72b" rel="stylesheet"></head>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/jsonData.js?7dc99123"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
     <body>        
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -114,7 +114,7 @@
             <!-- headerc ends -->
             <!-- content starts -->
             <div class="content flex-grow-1 bg-gray-50"> 
-                <section  ng-repeat="item in news" ng-if="item.id === urlIndex">
+                <section  ng-repeat="item in news" ng-if="item.Id === urlIndex">
                     <!-- header starts -->
                     <div class="d-lg-flex justify-content-between news-content-header bg-gray-800 page-header py-0" >
                         <div class="page-header-body pt-4 d-flex flex-column">
@@ -126,12 +126,12 @@
                                 </ul>
                             </nav>
                             <div class="flex-grow-1 d-flex align-items-center">
-                                <h1 class="text-white">{{item.title}}</h1>
+                                <h1 class="text-white">{{item.Name}}</h1>
                             </div>
                         </div>
                         <div class="page-header-img">
                             <figure>
-                                <img ng-src="images/{{item.image}}" alt="">
+                                <img ng-src="{{item.WebPic}}" alt="">
                             </figure>
                         </div>
                     </div>
@@ -143,27 +143,13 @@
                                 <div class="bg-white pt-3 pb-10">
                                     <div class="news-page-centont">
                                         <div class="d-flex mb-4 justify-content-between align-items-center">
-                                            <div class="date">{{item.date}}</div>
+                                            <div class="date">{{item.DataTime | date: 'yyyy/MM/dd'}}</div>
                                             <div class="share">
                                                 <button type="button" ng-click="line()"><i class="fa-brands fa-line"></i></button>
                                                 <button type="button" ng-click="facebook()"><i class="fa-brands fa-facebook-f"></i></button>
                                             </div>
                                         </div>
-                                        <article class="new-article" ng-bind-html="item.content"></article>
-                                        <!-- 新聞來源 -->
-                                        <div class="p-4 bg-gray-50 rounded-1 mb-4" ng-hide="item.newsSource.length === 0">
-                                            <h4 class="text-gray-800 mb-2">新聞來源</h4>
-                                            <ul class="list-unstyled mb-0">
-                                                <li ng-repeat="li in item.newsSource"><a ng-href="li" class="list-link-url" target="_blank">{{li}}</a></li>
-                                            </ul>
-                                        </div>
-                                        <!-- 相關新聞 -->
-                                        <div class="p-4 bg-gray-50 rounded-1" ng-hide="item.relatedNews.length === 0">
-                                            <h4 class="text-gray-800 mb-2">相關新聞</h4>
-                                            <ul class="list-unstyled mb-0 relatedNewsList">
-                                                <li ng-repeat="li in item.relatedNews"><a ng-href="li.link" class="list-link-url" target="_blank">{{li.title}}</a></li>
-                                            </ul>
-                                        </div>
+                                        <article class="new-article" ng-bind-html="item.Description"></article>
                                     </div>
                                 </div>
                                 
@@ -182,16 +168,16 @@
                         </div>
                         <div class="col-12">
                             <div class="news-lisk-block-lists">
-                                <a ng-href="news-content-template.html?urlQuery={{item.id}}" class="card-news d-md-flex" ng-repeat="item in newsRecommend | limitTo: newsLimitTo | orderBy:'date':reverse">
+                                <a ng-href="news-content-template.html?urlQuery={{item.Id}}" class="card-news d-md-flex" ng-repeat="item in newsRecommend | filter: {LanguageCode: lang} | limitTo: 3 | orderBy:'DataTime':reverse">
                                     <div class="card-news-img pr-0 pr-md-4">
                                         <figure>
-                                            <img ng-src="{{'images/' + item.image}}" alt="">
+                                            <img ng-src="{{item.WebPic}}" alt="">
                                         </figure>
                                     </div>
                                     <div class="card-news-body">
-                                        <span class="date">{{item.date}}</span>
-                                        <h4>{{item.title}}</h4>
-                                        <p>{{item.description}}</p>
+                                        <span class="date">{{item.DataTime | date: 'yyyy/MM/dd'}}</span>
+                                        <h4>{{item.Name}}</h4>
+                                        <p>{{item.Profile}}</p>
                                     </div>
                                 </a>
                             </div>
