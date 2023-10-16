@@ -9,20 +9,25 @@ var __webpack_exports__ = {};
             $scope.news = response.data;
             // 新聞中心排序
             $scope.reverse = true;
-            
+            // 過濾data
+            $scope.newsScope = [];
+            for (let i = 0; i < $scope.news.length; i++) {
+                const item = $scope.news[i];
+                if(item.LanguageCode === $scope.lang) $scope.newsScope.push(item);
+            }
             // 新聞中心 pagination
             $scope.curPage = 1;         // 當前頁碼
             $scope.newsPageSize = 5;        // 顯示筆數
             $scope.newsArr = [];            // 單頁資料存放
             $scope.newsPages = [];          // 分頁頁碼模組
             // 總頁數
-            $scope.newsTotalaPage = Math.ceil($scope.news.length / $scope.newsPageSize);
+            $scope.newsTotalaPage = Math.ceil($scope.newsScope.length / $scope.newsPageSize);
             // 顯示資料
             $scope.newsDisplayList = function(page) {
                 page--;
                 let start = $scope.newsPageSize * page;
                 let end = start +  $scope.newsPageSize;
-                let paginatedItems = $scope.news.slice(start, end);
+                let paginatedItems = $scope.newsScope.slice(start, end);
                 $scope.newsArr = paginatedItems;
             }
             // 分頁模組

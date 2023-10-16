@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/jsonData.js?7dc99123"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/jsonData.js?c56973b6"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
     <body>        
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -144,7 +144,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div id="news-list" class="bg-white">
-                                    <a ng-href="news-content-template.html?urlQuery={{item.Id}}" class="card-news d-md-flex" ng-repeat="item in newsArr | filter: {LanguageCode: lang} | orderBy:'DataTime':reverse">
+                                    <a ng-href="news-content-template.html?urlQuery={{item.Id}}" class="card-news d-md-flex" ng-repeat="item in newsArr | orderBy:'DataTime':reverse">
                                         <div class="card-news-img pr-0 pr-md-4">
                                             <figure>
                                                 <img ng-src="{{item.WebPic}}" alt="">
