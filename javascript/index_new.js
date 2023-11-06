@@ -11947,6 +11947,7 @@ const modules = [Virtual, Keyboard, Mousewheel, Navigation, Pagination, Scrollba
 core.use(modules);
 
 ;// CONCATENATED MODULE: ./src/javascript/index_new.js
+
 // wow.js
  
 new (wow_default())().init();

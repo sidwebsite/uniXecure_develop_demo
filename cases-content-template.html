@@ -11,7 +11,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/jsonData.js?c56973b6"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.0.0/bootbox.min.js" integrity="sha512-PojrCbDABSedyqVLg8QawV5wHvWnAQ68P4DNDArqsI55yhqsKPh7dxbg0jxCoi0O62HWi1Gcm/OOwXwvKebQgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/casesContent.js?f5f5c485"></script><link href="css/style.css?e31be0c4" rel="stylesheet"></head>
     <body>        
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -114,9 +116,9 @@
             <!-- headerc ends -->
             <!-- content starts -->
             <div class="content flex-grow-1 bg-gray-50"> 
-                <section ng-repeat="cases in cases" ng-if="cases.id === urlIndex">
+                <section>
                     <!-- header starts -->
-                    <div class="d-lg-flex justify-content-between bg-primary-600 page-header py-0" >
+                    <div class="d-lg-flex justify-content-between bg-primary-600 page-header py-0" ng-hide="empty(allitem.TitlePic)">
                         <div class="page-header-body pt-4 d-flex flex-column">
                             <nav class="h-auto">
                                 <ul class="breadcrumb cases-breadcrumb">
@@ -126,13 +128,31 @@
                                 </ul>
                             </nav>
                             <div class="flex-grow-1 d-flex align-items-center">
-                                <h1 class="text-white">{{cases.title}}</h1>
+                                <h1 class="text-white">{{allitem.Name}}</h1>
                             </div>
                         </div>
                         <div class="page-header-img">
                             <figure>
-                                <img ng-src="images/{{cases.image}}" alt="">
+                                <img ng-src="https://192.168.0.168:7070/pic/query?urlQuery={{allitem.TitlePic}}" alt="">
                             </figure>
+                        </div>
+                    </div>
+                    <div class="bg-primary-600 page-header" ng-hide="!empty(allitem.TitlePic)">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <nav class="h-auto">
+                                        <ul class="breadcrumb cases-breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                            <li class="breadcrumb-item">最新消息</li>
+                                            <li class="breadcrumb-item active"><a href="cases.html">成功案例</a></li>
+                                        </ul>
+                                    </nav>
+                                    <div class="flex-grow-1 d-flex align-items-center">
+                                        <h1 class="text-white">{{allitem.Name}}</h1>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- header ends -->
@@ -144,39 +164,18 @@
                                     <div class="news-page-centont">
                                         <div class="d-flex mb-4 justify-content-between align-items-md-start align-items-md-center">
                                             <div class="d-md-flex">
-                                                <p class="bg-primary-600 text-white px-2 py-1 mr-2 mb-2 mb-md-0 d-inline-block">{{cases.Industry}}</p>
+                                                <p class="bg-primary-600 text-white px-2 py-1 mr-2 mb-2 mb-md-0 d-inline-block"  ng-if="!empty(allitem.Industry)">{{allitem.Industry}}</p>
                                                 <ul class="list-inline d-inline-block cases-product">
-                                                    <li ng-repeat=" li in cases.product" class="list-inline-item bg-gray-100 text-primary-600 px-2 py-1">{{li}}</li>
+                                                    <li ng-repeat="li in allitem.Tag" ng-if="!empty(allitem.Tag)" class="list-inline-item"><a href="#" class="bg-gray-100 px-2 py-1">{{li}}</a></li>
                                                 </ul>
                                             </div>
                                             <div class="share">
                                                 <button type="button" ng-click="line()"><i class="fa-brands fa-line"></i></button>
                                                 <button type="button" ng-click="facebook()"><i class="fa-brands fa-facebook-f"></i></button>
-                                                <button type="button" ng-click=""><i class="fa-sharp fa-solid fa-link"></i></button>
+                                                <!-- <button type="button" ng-click=""><i class="fa-sharp fa-solid fa-link"></i></button> -->
                                             </div>
                                         </div>
-                                        <article class="new-article">
-                                            <div class="cases-Introduction">
-                                                <figure class="user-image" ng-if="cases.company.userImage !== ''">
-                                                    <img ng-src="images/{{cases.company.userImage}}" alt="">
-                                                </figure>
-                                                <div class="Introduction" ng-bind-html="cases.company.Introduction"></div>
-                                                <figure class="logo-image" ng-if="cases.company.logoImage !== ''">
-                                                    <img ng-src="images/{{cases.company.logoImage}}" alt="">
-                                                </figure>
-                                                <span class="d-block text-primary-600 fw-bolder" ng-hide="cases.company.name === ''">{{cases.company.name}}</span>
-                                            </div>
-                                            <div ng-bind-html="cases.company.other" ng-hide="cases.company.other === ''"></div>
-                                            <!-- 客戶背景與需求 -->
-                                            <h4>客戶背景與需求</h4>
-                                            <div class="customerBackground_needs" ng-bind-html="cases.customerBackground_needs"></div>
-                                            <!-- 解決方案 -->
-                                            <h4>解決方案</h4>
-                                            <div class="solution" ng-bind-html="cases.solution"></div>
-                                            <!-- 創造價值 -->
-                                            <h4>創造價值</h4>
-                                            <div class="createValue" ng-bind-html="cases.createValue"></div>
-                                        </article>
+                                        <article class="new-article" ng-bind-html="allitem.Description"></article>
                                     </div>
                                 </div>
                                 
@@ -195,22 +194,22 @@
                         </div>
                         <div class="col-12">
                             <div class="cases-lisk-block-lists">
-                                <a ng-href="cases-content-template.html?urlQuery={{slide.id}}" class="bg-white cases-card" ng-repeat="slide in casesRecommend | limitTo: 3">
+                                <a ng-href="cases-content-template.html?urlQuery={{item.uuidEncodeString}}" class="bg-white cases-card" ng-repeat="item in recommend">
                                     <div class="row">
                                         <div class="card-body col-lg">
                                             <div class="card-body-class">
-                                                <span>{{slide.Industry}}</span>
-                                                <ul ng-if="slide.product.length !== 0">
-                                                    <li ng-repeat="li in slide.product">{{li}}</li>
+                                                <span ng-if="!empty(item.Industry)">{{item.Industry}}</span>
+                                                <ul ng-if="!empty(item.Tag)">
+                                                    <li ng-repeat="li in item.Tag">{{li}}</li>
                                                 </ul>
                                             </div>
-                                            <p class="company" ng-hide="slide.company.name === ''">{{slide.company.name}}</p>
-                                            <h3>{{slide.title}}</h3>
-                                            <p class="text">{{slide.description}}</p>
+                                            <!-- <p class="company" ng-hide="slide.company.name === ''">{{slide.company.name}}</p> -->
+                                            <h3>{{item.Name}}</h3>
+                                            <p class="text">{{item.Profile}}</p>
                                         </div>
                                         <div class="card-img col-lg mb-3 mb-lg-0">
                                             <figure>
-                                                <img ng-src="{{'images/' + slide.image}}" alt="">
+                                                <img ng-src="{{item.picDownloadPath}}" alt="">
                                             </figure>
                                         </div>
                                     </div>
@@ -219,7 +218,7 @@
                         </div>
                         <div class="col-12">
                             <div class="d-flex justify-content-center">
-                                <a href="cases.html" class="link-outline-none-primary">更多案例 <i class="fa-solid fa-arrow-left-long"></i></a>
+                                <a href="cases.html" class="link-outline-none-primary">更多案例 <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/jsonData.js?c56973b6"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.0.0/bootbox.min.js" integrity="sha512-PojrCbDABSedyqVLg8QawV5wHvWnAQ68P4DNDArqsI55yhqsKPh7dxbg0jxCoi0O62HWi1Gcm/OOwXwvKebQgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/casesList.js?d7724b7b"></script><link href="css/style.css?e31be0c4" rel="stylesheet"></head>
     <body>        
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -143,22 +145,22 @@
                             <div class="col-12">
                                 <div id="cases-list">
                                     <!-- item -->
-                                    <a ng-href="cases-content-template.html?urlQuery={{slide.id}}" class="bg-white cases-card" ng-repeat="slide in casesArr">
+                                    <a ng-href="cases-content-template.html?urlQuery={{item.uuidEncodeString}}" class="bg-white cases-card" ng-repeat="item in casesArr">
                                         <div class="row">
                                             <div class="card-body col-lg">
                                                 <div class="card-body-class">
-                                                    <span>{{slide.Industry}}</span>
-                                                    <ul ng-if="slide.product.length !== 0">
-                                                        <li ng-repeat="li in slide.product">{{li}}</li>
+                                                    <span ng-if="!empty(item.Industry)">{{item.Industry}}</span>
+                                                    <ul ng-if="!empty(item.Tag)">
+                                                        <li ng-repeat="li in item.Tag">{{li}}</li>
                                                     </ul>
                                                 </div>
-                                                <p class="company" ng-hide="slide.company.name === ''">{{slide.company.name}}</p>
-                                                <h3>{{slide.title}}</h3>
-                                                <p class="text">{{slide.description}}</p>
+                                                <!-- <p class="company" ng-hide="slide.company.name === ''">{{slide.company.name}}</p> -->
+                                                <h3>{{item.Name}}</h3>
+                                                <p class="text">{{item.Profile}}</p>
                                             </div>
                                             <div class="card-img col-lg mb-3 mb-lg-0">
                                                 <figure>
-                                                    <img ng-src="{{'images/' + slide.image}}" alt="">
+                                                    <img ng-src="{{item.picDownloadPath}}" alt="">
                                                 </figure>
                                             </div>
                                         </div>

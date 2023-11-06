@@ -1,0 +1,43 @@
+{
+    "datatable": [
+        {
+            "DataTime": "2023-09-28 03:12:00.0",
+            "DataTimeEpochTime": 1695870720000,
+            "Id": 43,
+            "Industry": "",
+            "Location": "",
+            "Name": "【科技講堂】資安最前線 生成式AI 時代的資安挑戰",
+            "picDownloadPath": "https://192.168.0.168:7070/pic/query?urlQuery=L2RhdGEvdW5peGVjdXJld2ViYW1fcGljLzIxZmU4MTBhZWRkYmRmYTdkYjUzMjIzMTg5ZTQyMWU0Lzg0LmpwZw==",
+            "Profile": "生成式 AI 是 2023 最紅的關鍵字，現在許多企業已經開始使用 AI 來提升工作效益，不過其中也潛藏著資安危機，根據網路安全公司 Darktrace 公佈的最新研究報告，駭客使用 ChatGPT 等生成式 AI，透過增加文字描述、標點符號和句子長度及快速量產許多釣魚信件，讓社交工程攻擊量增加了 135%。本場議程將由精誠集團智慧資安團隊，帶領您進一步探討企業該如何因應數位時代的新挑戰，以及分享如何運用科技提升企業資安防護力。",
+            "Tag": "",
+            "UUID": "21fe810aeddbdfa7db53223189e421e4",
+            "uuidEncodeString": "MjFmZTgxMGFlZGRiZGZhN2RiNTMyMjMxODllNDIxZTQ="
+        },
+        {
+            "DataTime": "2023-10-06 06:29:00.0",
+            "DataTimeEpochTime": 1696573740000,
+            "Id": 55,
+            "Industry": "",
+            "Location": "",
+            "Name": "illumio 零信任微分隔平台將 Gartner Report 強調的身份驗證與存取，落實到企業環境中，彌補縱向防禦的盲點，遏止威脅橫向擴散",
+            "picDownloadPath": "https://192.168.0.168:7070/pic/query?urlQuery=L2RhdGEvdW5peGVjdXJld2ViYW1fcGljLzU2ZGNjMTcwYTM4NDk2NDc3ZGVkOWRhZTA0NmFmNDJjLzc3MC5qcGc=",
+            "Profile": "面對現今勒索病毒的快速傳播威脅，原仰賴防火牆進行縱向安全屏障的方式，已無法有效阻擋現行的資安威脅，而最大宗的勒索攻擊，市場上有 82% 的勒索軟體是利用橫向移動進行攻擊。首先，企業難以全面了解各系統、應用程式之間的通訊存取，形成安全漏洞的盲點。其次，資安的複雜度逐漸攀升，尤其在持續變動的混合環境中，如行動裝置與暫時性的存取裝置，這不僅需要即時的安全防護，更需要具備應對變動環境的策略，以確保資訊安全不受侵害。在防禦的細緻度面上，往往企業資安防護的量能僅能落實到 IP 層，無法更精細的到應用程式層面，使得企業機敏資料易受攻擊的風險。",
+            "Tag": "",
+            "UUID": "56dcc170a38496477ded9dae046af42c",
+            "uuidEncodeString": "NTZkY2MxNzBhMzg0OTY0NzdkZWQ5ZGFlMDQ2YWY0MmM="
+        },
+        {
+            "DataTime": "2023-10-12 06:32:00.0",
+            "DataTimeEpochTime": 1697092320000,
+            "Id": 58,
+            "Industry": "",
+            "Location": "",
+            "Name": "OPSWAT 與 Dimensional Research 聯手研究，揭露中小型企業網路安全應對現況",
+            "picDownloadPath": "https://192.168.0.168:7070/pic/query?urlQuery=L2RhdGEvdW5peGVjdXJld2ViYW1fcGljL2YyMTA1N2Y4NWIzNTc1OWEyYTE2NzJjZTFjYTEyZWE0Lzc4OS5wbmc=",
+            "Profile": "OPSWAT 與技術市場研究領域的領先公司 Dimensional Research 合作展開一項研究，其對象對於 50 位員工數量的公司及 300 多位 IT 專業人員，展開調查的內容為當發生惡意軟體威脅及網路安全攻擊所做的回應策略。其調查的專業人士都在負責惡意軟體檢測、分析和回應。從樣本調查來確保他們的資安成熟度，當未來遇到網路安全威脅時，他們如何準備應對其挑戰。",
+            "Tag": "",
+            "UUID": "f21057f85b35759a2a1672ce1ca12ea4",
+            "uuidEncodeString": "ZjIxMDU3Zjg1YjM1NzU5YTJhMTY3MmNlMWNhMTJlYTQ="
+        }
+    ]
+}

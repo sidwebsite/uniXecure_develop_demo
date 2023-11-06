@@ -11,7 +11,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/jsonData.js?c56973b6"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.0.0/bootbox.min.js" integrity="sha512-PojrCbDABSedyqVLg8QawV5wHvWnAQ68P4DNDArqsI55yhqsKPh7dxbg0jxCoi0O62HWi1Gcm/OOwXwvKebQgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/eventsContent.js?729c570f"></script><link href="css/style.css?e31be0c4" rel="stylesheet"></head>
     <body>        
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -114,9 +116,9 @@
             <!-- headerc ends -->
             <!-- content starts -->
             <div class="content flex-grow-1 bg-gray-50"> 
-                <section ng-repeat="events in events" ng-if="events.id === urlIndex">
+                <section>
                     <!-- header starts -->
-                    <div class="d-lg-flex justify-content-between bg-secondary-200 event-page-header page-header py-0" >
+                    <div class="d-lg-flex justify-content-between bg-secondary-200 event-page-header page-header py-0" ng-hide="empty(allitem.TitlePic)">
                         <div class="page-header-body pt-4 d-flex flex-column">
                             <nav class="h-auto">
                                 <ul class="breadcrumb events-breadcrumb">
@@ -126,13 +128,31 @@
                                 </ul>
                             </nav>
                             <div class="flex-grow-1 d-flex align-items-center">
-                                <h1 class="text-gray-800">{{events.title}}</h1>
+                                <h1 class="text-gray-800">{{allitem.Name}}</h1>
                             </div>
                         </div>
                         <div class="page-header-img">
                             <figure>
-                                <img ng-src="{{'images/' + events.image}}" >
+                                <img ng-src="https://192.168.0.168:7070/pic/query?urlQuery={{allitem.TitlePic}}" alt="">
                             </figure>
+                        </div>
+                    </div>
+                    <div class="bg-secondary-200 event-page-header page-header" ng-hide="!empty(allitem.TitlePic)">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <nav class="h-auto">
+                                        <ul class="breadcrumb events-breadcrumb">
+                                            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                            <li class="breadcrumb-item">最新消息</li>
+                                            <li class="breadcrumb-item active"><a href="events.html">行銷活動</a></li>
+                                        </ul>
+                                    </nav>
+                                    <div class="mb-5">
+                                        <h1 class="text-gray-800">{{allitem.Name}}</h1>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- header ends -->
@@ -148,61 +168,7 @@
                                                 <button type="button" ng-click="facebook()"><i class="fa-brands fa-facebook-f"></i></button>
                                             </div>
                                         </div>
-                                        <article class="new-article">
-                                            <!-- introduction -->
-                                            <div class="events-introduction" ng-bind-html="events.introduction"></div>
-                                            <!-- information -->
-                                            <div class="events-information" ng-hide="events.information.events_content === ''">
-                                                <div class="p-4 bg-gray-50 mb-4">
-                                                    <h4 class="text-gray-800">活動資訊</h4>
-                                                    <ul class="fw-bold list-inline mb-2">
-                                                        <li class="list-inline-item">日期：</li>
-                                                        <li class="list-inline-item">{{events.information.date}}</li>
-                                                    </ul>
-                                                    <ul class="fw-bold list-inline mb-2" ng-hide="events.information.enroll_date === ''">
-                                                        <li class="list-inline-item">報名：</li>
-                                                        <li class="list-inline-item">{{events.information.enroll_date}}</li>
-                                                    </ul>
-                                                    <ul class="fw-bold list-inline mb-2" ng-hide="events.information.location.location_name === ''">
-                                                        <li class="list-inline-item">地點：</li>
-                                                        <li class="list-inline-item"><a ng-href="{{events.information.location.location_link}}" class="link-outline-primary" target="_blank">{{events.information.location.location_name}}</a></li>
-                                                    </ul>
-                                                    <div class="bg-white px-4 py-3 mb-4" ng-bind-html="events.information.events_content"></div>
-                                                    <ul class="fw-bold list-inline">
-                                                        <li class="list-inline-item">活動聯繫窗口：</li>
-                                                        <li class="list-inline-item">
-                                                            <ul class="list-inline mb-0">
-                                                                <li class="list-inline-item">{{events.information.contact.phone}} <span>分機 {{events.information.contact.ext}}</span></li>
-                                                                <li class="list-inline-item">{{events.information.contact.contact_person}}</li>
-                                                                <li class="list-inline-item"><a ng-href="mailto:{{events.information.contact.email}}" class="link-outline-primary">{{events.information.contact.email}}</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                    <ul class="fw-bold list-inline" ng-hide="events.information.organizer === ''">
-                                                        <li class="list-inline-item">主辦單位：</li>
-                                                        <li class="list-inline-item">{{events.information.organizer}}</li>
-                                                    </ul>
-                                                    <div class="enroll-block mb-4" ng-bind-html="events.information.enroll_block.content" ng-hide="events.information.enroll_block.content === ''"></div>
-                                                    <div class="text-center mb-4">
-                                                        <a href="{{events.information.enroll_block.button.link}}" class="link-primary" target="_blank">{{events.information.enroll_block.button.title}}</a>
-                                                    </div>
-                                                    <div class="text-gray-600">
-                                                        <p class="mb-0">注意事項</p>
-                                                        <ul class="pl-0 mb-0">
-                                                            <li ng-repeat="li in events.information.notice">{{li}}</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </article>
-                                        <!-- 相關連結 / 相關活動 -->
-                                        <div class="p-4 bg-gray-50 rounded-1" ng-hide="events.source.title === ''">
-                                            <h4 class="text-gray-800 mb-2">{{events.source.title}}</h4>
-                                            <ul class="list-unstyled mb-0">
-                                                <li ng-repeat="li in events.source.list"><a ng-href="{{li.link}}" class="list-link-url" target="_blank">{{li.title}}</a></li>
-                                            </ul>
-                                        </div>
+                                        <article class="new-article" ng-bind-html="allitem.Description"></article>
                                     </div>
                                 </div>
                             </div>
@@ -222,20 +188,21 @@
                             <div class="events-lisk-block-lists">
                                 <div class="row">
                                     <!-- item -->
-                                    <div class="col-md-6 mb-5" ng-repeat="item in eventsRecommend | limitTo: 2">
-                                        <a ng-href="events-content-template.html?urlQuery={{item.id}}" class="card events-card">
+                                    <div class="col-md-6 mb-5" ng-repeat="item in recommend">
+                                        <a ng-href="events-content-template.html?urlQuery={{item.uuidEncodeString}}" class="card events-card">
                                             <div class="card-img">
-                                                <img ng-src="{{'images/' + item.image}}" alt="">
+                                                <img ng-src="{{item.picDownloadPath}}" alt="">
                                             </div>
                                             <div class="card-body">
                                                 <div>
-                                                    <h3>{{item.title}}</h3>
-                                                    <p class="text">{{item.description}}</p>
+                                                    <h3>{{item.Name}}</h3>
+                                                    <p class="text">{{item.Profile}}</p>
                                                 </div>
-                                                <div>
-                                                    <span class="date"><strong>活動日期：{{item.eventsDate}}</strong></span>
-                                                    <p>活動地點：{{item.eventsLocation}}</p>
+                                                <div class="d-md-flex align-items-center mb-2">
+                                                    <span class="date"><strong>活動日期：{{item.DataTimeEpochTime | date:'yyyy/MM/dd EEE':browserTimeZone}}</strong></span>
+                                                    <span class="status-alarm ml-0 ml-md-2" ng-if="item.DataTimeEpochTime > todayDate">即將開始</span>
                                                 </div>
+                                                <p>活動地點：{{item.Location}}</p>
                                             </div>
                                         </a>
                                     </div>
@@ -244,7 +211,7 @@
                         </div>
                         <div class="col-12">
                             <div class="d-flex justify-content-center">
-                                <a href="events.html" class="link-outline-none-primary">更多活動 <i class="fa-solid fa-arrow-left-long"></i></a>
+                                <a href="events.html" class="link-outline-none-primary">更多活動 <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>

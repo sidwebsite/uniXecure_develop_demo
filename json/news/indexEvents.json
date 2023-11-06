@@ -1,0 +1,56 @@
+{
+    "datatable": [
+        {
+            "DataTime": "2023-09-28 03:12:00.0",
+            "DataTimeEpochTime": 1699142400000,
+            "Id": 43,
+            "Industry": "",
+            "Location": "線上講座",
+            "Name": "【科技講堂】資安最前線 生成式AI 時代的資安挑戰",
+            "picDownloadPath": "https://192.168.0.168:7070/pic/query?urlQuery=L2RhdGEvdW5peGVjdXJld2ViYW1fcGljLzIxZmU4MTBhZWRkYmRmYTdkYjUzMjIzMTg5ZTQyMWU0Lzg0LmpwZw==",
+            "Profile": "生成式 AI 是 2023 最紅的關鍵字，現在許多企業已經開始使用 AI 來提升工作效益，不過其中也潛藏著資安危機，根據網路安全公司 Darktrace 公佈的最新研究報告，駭客使用 ChatGPT 等生成式 AI，透過增加文字描述、標點符號和句子長度及快速量產許多釣魚信件，讓社交工程攻擊量增加了 135%。本場議程將由精誠集團智慧資安團隊，帶領您進一步探討企業該如何因應數位時代的新挑戰，以及分享如何運用科技提升企業資安防護力。",
+            "Tag": "",
+            "UUID": "21fe810aeddbdfa7db53223189e421e4",
+            "uuidEncodeString": "MjFmZTgxMGFlZGRiZGZhN2RiNTMyMjMxODllNDIxZTQ="
+        },
+        {
+            "DataTime": "2023-08-18 02:57:00.0",
+            "DataTimeEpochTime": 1692327420000,
+            "Id": 31,
+            "Industry": "",
+            "Location": "弗勒莉藝術酒窖",
+            "Name": "品酩資安 VIP Day",
+            "picDownloadPath": "https://192.168.0.168:7070/pic/query?urlQuery=L2RhdGEvdW5peGVjdXJld2ViYW1fcGljLzAzZjdjZDBmNDQwY2Q4OWQzYzE4ZTZlYWMzNjY2ZDg3LzEwMC5qcGc=",
+            "Profile": "負責資安是什麼滋味？是提心吊膽疑神疑鬼，還是苦在心裡口難開？",
+            "Tag": "",
+            "UUID": "03f7cd0f440cd89d3c18e6eac3666d87",
+            "uuidEncodeString": "MDNmN2NkMGY0NDBjZDg5ZDNjMThlNmVhYzM2NjZkODc="
+        },
+        {
+            "DataTime": "2023-09-08 02:47:00.0",
+            "DataTimeEpochTime": 1694141220000,
+            "Id": 28,
+            "Industry": "",
+            "Location": "台北中山意舍酒店​",
+            "Name": "品酩資安 VIP Day",
+            "picDownloadPath": "https://192.168.0.168:7070/pic/query?urlQuery=L2RhdGEvdW5peGVjdXJld2ViYW1fcGljLzdjYTA0ODE5NGI4NWQ1MWViYjRkYzVhYzViYTE0NzZkLzEwMS5qcGc=",
+            "Profile": "負責資安是什麼滋味？是提心吊膽疑神疑鬼，還是苦在心裡口難開？",
+            "Tag": "",
+            "UUID": "7ca048194b85d51ebb4dc5ac5ba1476d",
+            "uuidEncodeString": "N2NhMDQ4MTk0Yjg1ZDUxZWJiNGRjNWFjNWJhMTQ3NmQ="
+        },
+        {
+            "DataTime": "2023-04-21 02:35:00.0",
+            "DataTimeEpochTime": 1682044500000,
+            "Id": 19,
+            "Industry": "",
+            "Location": "臺北南港展覽二館 4F​ 攤位編號：C121",
+            "Name": "資安太空號 邀您一同探索數位宇宙",
+            "picDownloadPath": "https://192.168.0.168:7070/pic/query?urlQuery=L2RhdGEvdW5peGVjdXJld2ViYW1fcGljLzM1M2MxNjQ0YTIzOWQ1M2NmNjg4ZTBlNjkyMmJmZjExLzMxLnBuZw==",
+            "Profile": "有別於一般品牌展覽形式 uniXecure 資安太空號將從企業四大痛點「外部威脅、內部風險、法規稽核...",
+            "Tag": "",
+            "UUID": "353c1644a239d53cf688e0e6922bff11",
+            "uuidEncodeString": "MzUzYzE2NDRhMjM5ZDUzY2Y2ODhlMGU2OTIyYmZmMTE="
+        }
+    ]
+}

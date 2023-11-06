@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/index_new.js?6309c541"></script><script defer src="javascript/modal.js?ee052a96"></script><script defer src="javascript/jsonData.js?c56973b6"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/index_new.js?5879434e"></script><script defer src="javascript/modal.js?ee052a96"></script><script defer src="javascript/jsonData.js?a34085f3"></script><link href="css/style.css?e31be0c4" rel="stylesheet"></head>
     <body>        
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -280,14 +280,14 @@
                             </div>
                             <div class="col-12">
                                 <div class="bg-white index-news-list">
-                                    <a href="#" class="card-news d-md-flex" ng-repeat="item in news | filter: {LanguageCode: lang} | limitTo: 3 | orderBy:'DataTime':reverse">
+                                    <a href="#" class="card-news d-md-flex" ng-repeat="item in newsScope | limitTo: 3">
                                         <div class="card-news-img pr-0 pr-md-4">
                                             <figure>
                                                 <img ng-src="{{item.WebPic}}" alt="">
                                             </figure>
                                         </div>
                                         <div class="card-news-body">
-                                            <span class="date">{{item.DataTime}}</span>
+                                            <span class="date">{{item.DataTime.split(" ")[0] | date: 'yyyy/MM/dd'}}</span>
                                             <h4>{{item.Name}}</h4>
                                             <p>{{item.Profile}}</p>
                                         </div>

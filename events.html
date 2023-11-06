@@ -11,7 +11,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/jsonData.js?c56973b6"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.0.0/bootbox.min.js" integrity="sha512-PojrCbDABSedyqVLg8QawV5wHvWnAQ68P4DNDArqsI55yhqsKPh7dxbg0jxCoi0O62HWi1Gcm/OOwXwvKebQgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/eventsList.js?149db55d"></script><link href="css/style.css?e31be0c4" rel="stylesheet"></head>
     <body>        
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -142,23 +145,24 @@
                         <!-- first events data -->
                         <div class="row">
                             <div class="col-12">
-                                <a ng-href="events-content-template.html?urlQuery={{item.id}}" class="card events-card" ng-repeat="item in events" ng-if="$first == true">
+                                <a ng-href="events-content-template.html?urlQuery={{item.uuidEncodeString}}" class="card events-card" ng-repeat="item in allitem" ng-if="$first == true">
                                     <div class="row">
                                         <div class="col-md">
-                                            <div class="card-img mb-md-0">
-                                                <img ng-src="{{'images/' + item.image}}" alt="">
+                                            <div class="card-img mb-md-0 h-auto pb-0">
+                                                <img ng-src="{{item.picDownloadPath}}" alt="">
                                             </div>
                                         </div>
                                         <div class="col-md">
                                             <div class="card-body d-flex flex-column justify-content-center h-100">
                                                 <div>
-                                                    <h3>{{item.title}}</h3>
-                                                    <p class="text">{{item.description}}</p>
+                                                    <h3 class="h-auto">{{item.Name}}</h3>
+                                                    <p class="text">{{item.Profile}}</p>
                                                 </div>
-                                                <div>
-                                                    <span class="date"><strong>活動日期：{{item.eventsDate}}</strong></span>
-                                                    <p>活動地點：{{item.eventsLocation}}</p>
+                                                <div class="d-md-flex align-items-center mb-2">
+                                                    <span class="date"><strong>活動日期：{{item.DataTimeEpochTime | date:'yyyy/MM/dd EEE':browserTimeZone}}</strong></span>
+                                                    <span class="status-alarm ml-0 ml-md-2" ng-if="item.DataTimeEpochTime > todayDate">即將開始</span>
                                                 </div>
+                                                <p>活動地點：{{item.Location}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -175,19 +179,20 @@
                             <div class="row">
                                 <!-- item -->
                                 <div class="col-md-6 mb-5" ng-repeat="item in eventsArr">
-                                    <a ng-href="events-content-template.html?urlQuery={{item.id}}" class="card events-card">
+                                    <a ng-href="events-content-template.html?urlQuery={{item.uuidEncodeString}}" class="card events-card">
                                         <div class="card-img">
-                                            <img ng-src="{{'images/' + item.image}}" alt="">
+                                            <img ng-src="{{item.picDownloadPath}}" alt="">
                                         </div>
                                         <div class="card-body">
                                             <div>
-                                                <h3>{{item.title}}</h3>
-                                                <p class="text">{{item.description}}</p>
+                                                <h3>{{item.Name}}</h3>
+                                                <p class="text">{{item.Profile}}</p>
                                             </div>
-                                            <div>
-                                                <span class="date"><strong>活動日期：{{item.eventsDate}}</strong></span>
-                                                <p>活動地點：{{item.eventsLocation}}</p>
+                                            <div class="d-md-flex align-items-center mb-2">
+                                                <span class="date"><strong>活動日期：{{item.DataTimeEpochTime | date:'yyyy/MM/dd EEE':browserTimeZone}}</strong></span>
+                                                <span class="status-alarm ml-0 ml-md-2" ng-if="item.DataTimeEpochTime > todayDate">即將開始</span>
                                             </div>
+                                            <p>活動地點：{{item.Location}}</p>
                                         </div>
                                     </a>
                                 </div>

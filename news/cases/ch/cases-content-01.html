@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="getAppController" lang="zh-TW">
+    <head>
+        <meta charset="utf-8"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TG1WB7W2Y3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TG1WB7W2Y3');
+</script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>unixecure</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+    <link rel="icon" href="../../../favicon.ico"><script defer src="../../../javascript/main.js?f290b205"></script><script defer src="../../../javascript/share.js?ff6140a9"></script><link href="../../../css/style.css?e31be0c4" rel="stylesheet"></head>
+    <body>        
+        <!-- main starts -->
+        <main class="main d-flex flex-column">
+            <!-- headerc starts -->
+            <header class="header">
+                <nav>
+                    <div class="wrapper">
+                        <div class="logo">
+                            <a href="index.html"><img src="../../../images/logo.png" alt="logo"></a>
+                        </div>
+                        <div class="navbar">
+                            <ul>
+                                <li>
+                                    <a href="#">關於我們 <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">關於我們</p>
+                                                <ul>
+                                                    <li><a href="Introduction.html">公司簡介</a></li>
+                                                    <li><a href="solution-white-paper.html">報告書專區</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">服務項目 <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">資安監控維運中心</p>
+                                                <ul>
+                                                    <li><a href="serve-moc.html">MOC 資安監控維運中心</a></li>
+                                                </ul>
+                                                <p class="mb-3">端點防護</p>
+                                                <ul>
+                                                    <li><a href="serve-sivas.html">SIVAS 資安弱點通報系統</a></li>
+                                                    <!-- <li><a href="edr.html">EDR 端點資安管控監管平台</a></li> -->
+                                                    <!-- <li><a href="ssc.html">SSC 政府組態基準檢測系統</a></li> -->
+                                                </ul>
+                                                <p class="mb-3">中心端監控</p>
+                                                <ul>
+                                                    <li><a href="serve-srmas.html">SRMAS 系統資源監控管理平台</a></li>
+                                                    <!-- <li><a href="soc.html">SOC 資通安全威脅偵測管理</a></li> -->
+                                                    <li><a href="serve-lucas.html">LUCAS 跡證保存系統</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">人員資安意識： HEIS 資安意識人因分析系統</p>
+                                                <ul>
+                                                    <li><a href="serve-heis.html">HEIS 資安意識人因分析系統</a></li>
+                                                    <li><a href="serve-sesc.html">SESC 次世代郵件安全雲</a></li>
+                                                </ul>
+                                                <p class="mb-3">資安服務</p>
+                                                <ul>
+                                                    <li><a href="serve-cse.html">資安健診</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="agent-products-index.html">代理產品</a></li>
+                                <li>
+                                    <a href="#" class="active">最新消息 <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">最新消息</p>
+                                                <ul>
+                                                    <li><a href="news_new.html">新聞中心</a></li>
+                                                    <li><a href="events.html">行銷活動</a></li>
+                                                    <li><a href="cases.html">成功案例</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="contact.html">聯絡我們</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="login-language d-flex align-items-center">
+                        <!-- <a href="#" class="link-primary"><i class="fa-solid fa-user"></i> 會員登入</a> -->
+                        <div class="language-container">
+                            <a href="#" class="language-btn ml-3 fa-sharp fa-solid fa-globe"></a>
+                            <ul class="language">
+                                <li><a href="index.html" class="active">繁體中文</a></li>
+                                <li><a href="index-en.html">English</a></li>
+                                <li><a href="index-ja.html">日本語</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="toggle-navbar ml-3 fa-solid fa-bars"></a>
+                    </div>
+                </nav>
+            </header>
+            <!-- headerc ends -->
+            <!-- content starts -->
+            <div class="content flex-grow-1 bg-gray-50"> 
+                <section>
+                    <!-- header starts -->
+                    <div class="d-lg-flex justify-content-between bg-primary-600 page-header py-0" >
+                        <div class="page-header-body pt-4 d-flex flex-column">
+                            <nav class="h-auto">
+                                <ul class="breadcrumb cases-breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+                                    <li class="breadcrumb-item">最新消息</li>
+                                    <li class="breadcrumb-item active"><a href="cases.html">成功案例</a></li>
+                                </ul>
+                            </nav>
+                            <div class="flex-grow-1 d-flex align-items-center">
+                                <h1 class="text-white">完善數位韌性！專屬資安規劃成為製造業的科技後盾</h1>
+                            </div>
+                        </div>
+                        <div class="page-header-img">
+                            <figure>
+                                <img src="../../../images/cases_banner_01.jpg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- header ends -->
+                    <!-- content starts -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bg-white pt-3 pb-10">
+                                    <div class="news-page-centont">
+                                        <div class="d-flex mb-4 justify-content-between align-items-md-start align-items-md-center">
+                                            <div class="d-md-flex">
+                                                <p class="bg-primary-600 text-white px-2 py-1 mr-2 mb-2 mb-md-0 d-inline-block">一般製造業</p>
+                                                <ul class="list-inline d-inline-block cases-product">
+                                                    <li class="list-inline-item bg-gray-100 text-primary-600 px-2 py-1">MOC</li>
+                                                </ul>
+                                            </div>
+                                            <div class="share">
+                                                <button type="button" data-sharer="line" data-url=""><i class="fa-brands fa-line"></i></button>
+                                                <button type="button" data-sharer="facebook" data-url=""><i class="fa-brands fa-facebook-f"></i></button>
+                                            </div>
+                                        </div>
+                                        <article class="new-article">
+                                            <div class="cases-Introduction">
+                                                <div class="Introduction">
+                                                    <p>A 客戶為國內知名製造業，近年為爭取國外客戶的訂單，提升資訊安全一直都是重點工作項目之一，且過去曾遭受幾起資安攻擊事件，讓客戶不得不重整內部資源，甚至須向外尋求更專業的協助。但如何兼顧國內上市櫃公司資通安全防護及管理機制，儼然成為一大難解之題，因此，A客戶在精誠資訊的協助下，決定導入 <a href="serve-moc" class="list-link-url">MOC（Monitoring and Operation Center）資安監控維運中心</a> 的服務，來全面圍堵資安威脅。
+                                                </div>
+                                            </div>
+                                            <h4>客戶背景與需求</h4>
+                                            <p class="mb-0">知名製造業 A 客戶成立於西元 1973 年，立足於台灣，商業觸角遍及全球五大洲，主要生產與銷售不銹鋼製品、用具等。為爭取更多訂單並建立安心品牌形象，需規劃將資安監測作業納入資通系統的開發過程，也因為過去曾發生過幾起資安事件，讓 A 客戶逐漸了解自己所面臨的各種威脅。此外，身為國內上市上櫃公司，A 客戶意識到必須擘畫一張可靠性資安防護藍圖，以利及早建構良好的資安措施來保護營運環境和系統。</p>
+                                            <p>過去幾年，許多企業都已正面回應數位轉型的挑戰，在數位化的浪潮中，資安漏洞也隨著數位技術的多元化而朝「橫向」、「縱向」發展，儘管憂心，但根據《2022 趨勢科技資安年度報告》指出，仍有 33% 的受訪者認為他們根本缺乏資源來理解與管理這些風險，因此，客戶要的並不只是一個資安產品，而是一個完整的資安策略「方向」。</p>
+                                            <h4>解決方案</h4>
+                                            <p class="mb-0">市面上大部分的資安監控服務賣的都是產品，然而，即使花費 100% 的資安預算，也無法做到滴水不漏的監控防護，所以客戶需要的不只是單純賣產品與軟體的資安供應商，而是能同時做到輔導與規劃的顧問資安服務。</p>
+                                            <p class="mb-0">精誠集團旗下的智慧資安科技，擁有資深的 <a href="serve-moc" class="list-link-url">MOC（Monitoring and Operation Center）資安監控維運中心</a> 專業團隊，透過結合在全臺各地地方政府機關的資安服務經驗，與分析資通安全法及最新資安防禦情資的結果，能提出完整符合各級組織、企業資安需求的資安維運監控服務。</p>
+                                            <p>本次案例就客戶需求，提出兩階段一站式資安防護計畫：</p>
+                                            <h5>第一階段：SOC（Security Operation Center）導入</h5>
+                                            <p>首先建置資安監控管理維運系統、資安威脅偵測管理機制及系統資源監控管理平台，提供事前預防、事中偵測、事後應處等一站式資安服務，全力防堵潛在威脅。</p>
+                                            <h5>第二階段：MOC（Monitoring and Operation Center）顧問服務</h5>
+                                            <p>完善資訊安全管理體系文件管理系統後，再提供MOC資安顧問服務，在專業團隊的協助下，提供資安健檢、監控報告、弱點掃描及 <a href="serve-heis" class="list-link-url">社交工程演練</a> 等資安防護技術。</p>
+                                            <h4>創造價值</h4>
+                                            <p class="mb-0">智慧資安科技擁有協助近百家企業建置資安防護系統的豐富經驗，且跨足各個產業領域。其次，智慧資安的 <a href="serve-moc" class="list-link-url">MOC 資安監控維運中心</a>，已取得 ISO 20000、ISO 27001 與 ISO 27701的國際認證，具備高品質的資安服務能量。並同時滿足公務機關跟企業營運的機密性、完整性，以及可用性的期待。相比其他資安產品，智慧資安著重的是客戶導向服務，在專案輔導的過程中，協助客戶評估產品建置之優先順序。單獨為企業規劃專屬資安方案，除了可緩解客戶壓力，在互動歷程中，更能因應客戶需求，建立更長遠的資安防護目標。</p>
+                                        </article>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content ends -->
+                </section>
+                <!-- list block starts -->
+                <section class="section cases-lisk-block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 class="text-center mb-5">更多成功案例</h4>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="cases-lisk-block-lists">
+                                <a href="#" class="bg-white cases-card mb-4">
+                                    <div class="row">
+                                        <div class="card-body col-lg">
+                                            <div class="card-body-class">
+                                                <span></span>
+                                                <ul>
+                                                    <li></li>
+                                                </ul>
+                                            </div>
+                                            <p class="company"></p>
+                                            <h3></h3>
+                                            <p class="text"></p>
+                                        </div>
+                                        <div class="card-img col-lg mb-3 mb-lg-0">
+                                            <figure>
+                                                <!-- <img ng-src="{{'images/' + slide.image}}" alt=""> -->
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex justify-content-center">
+                                <a href="cases.html" class="link-outline-none-primary">更多案例 <i class="fa-solid fa-arrow-left-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- list block ends -->
+            </div>
+            <!-- content ends -->
+            <!-- footer starts -->
+            <footer class="footer">
+                <!-- contact starts -->
+                <section class="footer-contact">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="text-right d-none d-md-block">Contact</h1>
+                                <div class="contact">
+                                    <div class="contact-bg"></div>
+                                    <div>企業方案 IT 服務 / 解決方案諮詢<br />歡迎聯繫智慧資安</div>
+                                    <a href="contact.html" class="link-secondary">關於我們</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- contact ends -->
+                <!-- content starts -->
+                <section class="footer-content my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center">
+                                    <div class="mb-3">
+                                        <img src="../../../images/footer-logo.png" alt="">
+                                    </div>
+                                    <div class="shart">
+                                        <a href="https://www.youtube.com/@unixecure3203" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="https://www.facebook.com/uniXecure/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <!-- <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a> -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="d-flex  flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">服務信箱</div>
+                                    <div><a href="mailto:servicedesk@unixecure.com.tw" class="footer-mail">servicedesk@unixecure.com.tw</a></div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">臺北辦公室</div>
+                                    <div class="mr-3">114 臺北市內湖區基湖路 35 巷 13 號巴黎科技大樓 8 樓 <a href="https://goo.gl/maps/LDBJQvJMV3gkNSGAA" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>電話：02-8798-6088</div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">臺中辦公室</div>
+                                    <div class="mr-3">407 臺中市西屯區台灣大道 3 段 660 號 6 樓之 3 <a href="https://goo.gl/maps/8FYsL5VeEQhXjuxH6" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>電話：04-24523928 分機 300、301、302</div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">臺南辦公室</div>
+                                    <div class="mr-3">711 臺南市歸仁區歸仁十三路一段６號 3 樓 B309 室 <a href="https://goo.gl/maps/SK5XkyW9DXzEFPx39" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>電話：06-3033-018</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-md-row justify-content-between">
+                                    <a href="copyright-privacy.html" class="copyright">著作權及隱私權聲明</a>
+                                    <div><span class="mr-3">精誠集團</span>智慧資安科技股份有限公司 © <span class="year"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- content ends -->
+            </footer>
+            <!-- footer ends -->
+        </main>
+        <!-- main ends -->
+        <!-- go top -->
+        <a href="#" class="btn gotop">
+            <i class="fa-solid fa-arrow-up-long"></i>
+        </a>
+    </body>
+</html>

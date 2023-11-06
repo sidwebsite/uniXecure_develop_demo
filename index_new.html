@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller="getAppController" lang="zh-TW">
+<html ng-app="myApp" ng-controller="getAppController" lang="zh-TW"><head><meta name="description" content="uniXecure智慧資安科技具備首屈一指國內外資安產品、身經百戰資安專家團隊、高效合規的資訊安全流程! 提供「事前預防」「事中偵測」「事後應處」完整一站式資安服務，全台三座資安監控維運中心可7x24小時第一線保衛企業資安"><meta name="keywords" content="資安廠商推薦,端點防護,資安委外,網路監控,SOC,可視化監控,OT資安治理"><link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/index_new.js?5879434e"></script><script defer src="javascript/modal.js?ee052a96"></script><script defer src="javascript/indexNews.js?2e7d7382"></script><link href="css/style.css?e31be0c4" rel="stylesheet"></head>
     <head>
         <meta charset="utf-8"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TG1WB7W2Y3"></script>
 <script>
@@ -11,7 +11,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>資訊安全治理首選廠商-MOC資安監控管理維運系統- uniXecure智慧資安科技</title>
-    <meta name="description" content="uniXecure智慧資安科技具備首屈一指國內外資安產品、身經百戰資安專家團隊、高效合規的資訊安全流程! 提供「事前預防」「事中偵測」「事後應處」完整一站式資安服務，全台三座資安監控維運中心可7x24小時第一線保衛企業資安"><meta name="keywords" content="資安廠商推薦,端點防護,資安委外,網路監控,SOC,可視化監控,OT資安治理"><link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/index_new.js?6309c541"></script><script defer src="javascript/modal.js?ee052a96"></script><script defer src="javascript/jsonData.js?c56973b6"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.0.0/bootbox.min.js" integrity="sha512-PojrCbDABSedyqVLg8QawV5wHvWnAQ68P4DNDArqsI55yhqsKPh7dxbg0jxCoi0O62HWi1Gcm/OOwXwvKebQgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <body>
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -287,14 +288,14 @@
                             </div>
                             <div class="col-12">
                                 <div class="bg-white index-news-list">
-                                    <a href="news-content-template.html?urlQuery={{item.Id}}" class="card-news d-md-flex" ng-repeat="item in news | filter: {LanguageCode: lang} | limitTo: 3 | orderBy:'DataTime':reverse">
+                                    <a ng-href="news-content-template.html?urlQuery={{item.uuidEncodeString}}" class="card-news d-md-flex" ng-repeat="item in allitem | orderBy :'DataTimeEpochTime' : reverse">
                                         <div class="card-news-img pr-0 pr-md-4">
                                             <figure>
-                                                <img ng-src="{{item.WebPic}}" alt="">
+                                                <img ng-src="{{item.picDownloadPath}}" alt="">
                                             </figure>
                                         </div>
                                         <div class="card-news-body">
-                                            <span class="date">{{item.DataTime | date: 'yyyy/MM/dd'}}</span>
+                                            <span class="date">{{item.DataTimeEpochTime | date:'yyyy/MM/dd':browserTimeZone}}</span>
                                             <h4>{{item.Name}}</h4>
                                             <p>{{item.Profile}}</p>
                                         </div>
@@ -309,7 +310,7 @@
                 </section>
                 <!-- news ends -->
                 <!-- events starts -->
-                <section class="section index-news" ng-hide="events.length === 0">
+                <section class="section index-news">
                     <div class="index-news-circle"></div>
                     <div class="container">
                         <div class="row">
@@ -324,10 +325,10 @@
                             <div class="col-12 pb-6">
                                 <div class="swiper events-Swiper h-100 pb-8">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide" ng-repeat="item in events | filter: {LanguageCode: lang}  | limitTo: 4">
-                                            <a ng-href="events-content-template.html?urlQuery={{item.Id}}" class="card events-card">
+                                        <div class="swiper-slide" ng-repeat="item in eventsItem">
+                                            <a ng-href="events-content-template.html?urlQuery={{item.uuidEncodeString}}" class="card events-card">
                                                 <div class="card-img">
-                                                    <img ng-src="{{'images/' + item.WebPic}}" alt="">
+                                                    <img ng-src="{{item.picDownloadPath}}" alt="">
                                                 </div>
                                                 <div class="card-body d-md-flex">
                                                     <div>
@@ -335,8 +336,11 @@
                                                         <p class="text">{{item.Profile}}</p>
                                                     </div>
                                                     <div>
-                                                        <span class="date"><strong>活動日期：{{item.DataTime | date: 'yyyy/MM/dd EEE'}}</strong></span>
-                                                        <p>活動地點：</p>
+                                                        <div class="d-md-flex align-items-center mb-2">
+                                                            <span class="date"><strong>活動日期：{{item.DataTimeEpochTime | date:'yyyy/MM/dd EEE':browserTimeZone}}</strong></span>
+                                                            <span class="status-alarm ml-0 ml-md-2" ng-if="item.DataTimeEpochTime > todayDate">即將開始</span>
+                                                        </div>
+                                                        <p>活動地點：{{item.Location}}</p>
                                                     </div>
                                                 </div>
                                             </a>
@@ -355,7 +359,7 @@
                 </section>
                 <!-- events ends -->
                 <!-- cases starts -->
-                <section class="section index-cases circle-xs-bg" ng-hide="cases.length === 0">
+                <section class="section index-cases circle-xs-bg">
                     <div class="container wow fadeIn">
                         <div class="row">
                             <div class="col-12">
@@ -367,24 +371,24 @@
                             <div class="col-12 pb-5">
                                 <div class="swiper cases-Swiper pb-8">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide" ng-repeat="item in cases | filter: {Type: '3', LanguageCode: lang}  | limitTo: 5">
+                                        <div class="swiper-slide" ng-repeat="item in casesItem">
                                             <div class="bg-white px-3">
-                                                <a ng-href="cases-content-template.html?urlQuery={{item.Id}}" class="d-block">
+                                                <a ng-href="cases-content-template.html?urlQuery={{item.uuidEncodeString}}" class="d-block">
                                                     <div class="cases-card row">
                                                         <div class="card-body col-lg">
                                                             <div class="card-body-class">
-                                                                <span></span>
-                                                                <ul>
-                                                                    <li></li>
+                                                                <span ng-if="!empty(item.Industry)">{{item.Industry}}</span>
+                                                                <ul ng-if="!empty(item.Tag)">
+                                                                    <li ng-repeat="li in item.Tag">{{li}}</li>
                                                                 </ul>
                                                             </div>
-                                                            <p class="company"></p>
+                                                            <!-- <p class="company">{{item.}}</p> -->
                                                             <h3>{{item.Name}}</h3>
                                                             <p class="text">{{item.Profile}}</p>
                                                         </div>
                                                         <div class="card-img col-lg mb-3 mb-lg-0">
                                                             <figure>
-                                                                <img ng-src="{{'images/' +  item.WebPic}}" alt="">
+                                                                <img ng-src="{{item.picDownloadPath}}" alt="">
                                                             </figure>
                                                         </div>
                                                     </div>

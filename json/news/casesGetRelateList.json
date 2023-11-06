@@ -1,0 +1,43 @@
+{
+    "datatable": [
+        {
+            "DataTime": "2023-04-21 02:35:00.0",
+            "DataTimeEpochTime": 1682044500000,
+            "Id": 6,
+            "Industry": "",
+            "Location": "",
+            "Name": "訂閱式「社交工程演練」 助醫療院所提升資安防護意識",
+            "picDownloadPath": "../../images/cases_banner_06.jpg",
+            "Profile": "成功案例近幾年，駭客攻擊手法不斷推陳出新，國際間醫療機構頻頻遭受攻擊，台灣醫療領域也成鎖定目標。2020 年八月，全台超過 60 家醫療院所同時遭到勒索軟體攻擊，此新聞一出造成轟動，事關千萬人的個資安全，主管機關衛服部呼籲各醫院要提高資安防護意識，未來將在醫院評鑑制度中，納入相關資安要求，以降低醫院資安風險。",
+            "Tag": "2",
+            "UUID": "21fe810aeddbdfa7db53223189e421e4",
+            "uuidEncodeString": "MjFmZTgxMGFlZGRiZGZhN2RiNTMyMjMxODllNDIxZTQ="
+        },
+        {
+            "DataTime": "2023-04-21 02:35:00.0",
+            "DataTimeEpochTime": 1682044500000,
+            "Id": 5,
+            "Industry": "化學品製造業",
+            "Location": "",
+            "Name": "資安健診一把罩 保障化工廠供應鏈安全與法規遵循",
+            "picDownloadPath": "../../images/cases_banner_05.jpg",
+            "Profile": "A 公司化學材料生產製造商專注於特用化學產品的研發、生產和銷售，包括紫外光吸收劑、光安定劑、抗氧化劑和光引發劑等產品。常見被應用於汽車、飛機、高鐵、船舶等工業塗料和建築物塗料，可以延緩紫外光照射對物品造成的損壞。近年 A 公司積極拓展新的應用領域，例如添加在醫療用口內 X 光膠片上，並成功獲得國際醫材大廠的認證。全球環保意識抬頭，對塗料及塑料添加劑的環境安全與法規更趨嚴格，而 A 公司深耕於利基型中高階特用化學市場，新開發產品像是專利反應型紫外光吸收劑，以及應用於光學膜產業的專利高效藍光吸收劑，已逐步打入國際化工大廠供應鏈。",
+            "Tag": "2,3,5,7",
+            "UUID": "21fe810aeddbdfa7db53223189e421e4",
+            "uuidEncodeString": "MjFmZTgxMGFlZGRiZGZhN2RiNTMyMjMxODllNDIxZTQ="
+        },
+        {
+            "DataTime": "2023-04-21 02:35:00.0",
+            "DataTimeEpochTime": 1682044500000,
+            "Id": 4,
+            "Industry": "政府機關",
+            "Location": "",
+            "Name": "MOC 維運監控中心　市政資安防護一次到位！",
+            "picDownloadPath": "../../images/cases_banner_04.jpg",
+            "Profile": "防守者每次都需要成功，攻擊者成功一次就夠了。」資安防護是一場不對稱的戰爭，要在有限資源下達成最有效的資安防護，關鍵是建立「完善的應變程序」、「縱深的防禦架構」以及「提升人員資安意識」，而MOC（Monitoring and Operation Center）資安監控維運中心即是以此宗旨孕育而生。資通安全法通過後，各政府機關皆被要求符合相應的資通安全法責任等級規範，從管理面、技術面到訓練認知面都有嚴格的應辦事項，因此如何提升防禦能量與選擇合適的資安夥伴成為各機關的重要課題。",
+            "Tag": "1",
+            "UUID": "21fe810aeddbdfa7db53223189e421e4",
+            "uuidEncodeString": "MjFmZTgxMGFlZGRiZGZhN2RiNTMyMjMxODllNDIxZTQ="
+        }
+    ]
+}

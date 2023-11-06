@@ -11,8 +11,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>unixecure</title>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/jsonData.js?c56973b6"></script><link href="css/style.css?1ab65fdc" rel="stylesheet"></head>
-    <body>        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.0.0/bootbox.min.js" integrity="sha512-PojrCbDABSedyqVLg8QawV5wHvWnAQ68P4DNDArqsI55yhqsKPh7dxbg0jxCoi0O62HWi1Gcm/OOwXwvKebQgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/newsContent.js?be8f6d76"></script><link href="css/style.css?e31be0c4" rel="stylesheet"></head>
+    <body>
         <!-- main starts -->
         <main class="main d-flex flex-column">
             <!-- headerc starts -->
@@ -113,10 +115,10 @@
             </header>
             <!-- headerc ends -->
             <!-- content starts -->
-            <div class="content flex-grow-1 bg-gray-50"> 
-                <section  ng-repeat="item in news" ng-if="item.Id === urlIndex">
+            <div class="content flex-grow-1 bg-gray-50">
+                <section>
                     <!-- header starts -->
-                    <!-- <div class="d-lg-flex justify-content-between news-content-header bg-gray-800 page-header py-0" >
+                    <div class="d-lg-flex justify-content-between news-content-header bg-gray-800 page-header py-0" ng-hide="empty(allitem.TitlePic)">
                         <div class="page-header-body pt-4 d-flex flex-column">
                             <nav class="h-auto">
                                 <ul class="breadcrumb news-breadcrumb">
@@ -126,16 +128,16 @@
                                 </ul>
                             </nav>
                             <div class="flex-grow-1 d-flex align-items-center">
-                                <h1 class="text-white">{{item.Name}}</h1>
+                                <h1 class="text-white">{{allitem.Name}}</h1>
                             </div>
                         </div>
                         <div class="page-header-img">
                             <figure>
-                                <img ng-src="{{item.WebPic}}" alt="">
+                                <img ng-src="https://192.168.0.168:7070/pic/query?urlQuery={{allitem.TitlePic}}" alt="">
                             </figure>
                         </div>
-                    </div> -->
-                    <div class="news-content-header bg-gray-800 page-header">
+                    </div>
+                    <div class="news-content-header bg-gray-800 page-header" ng-hide="!empty(allitem.TitlePic)">
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
@@ -147,7 +149,7 @@
                                         </ul>
                                     </nav>
                                     <div class="mb-5">
-                                        <h1 class="text-white">{{item.Name}}</h1>
+                                        <h1 class="text-white">{{allitem.Name}}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -161,13 +163,13 @@
                                 <div class="bg-white pt-3 pb-10">
                                     <div class="news-page-centont">
                                         <div class="d-flex mb-4 justify-content-between align-items-center">
-                                            <div class="date">{{item.DataTime | date: 'yyyy/MM/dd'}}</div>
+                                            <div class="date">{{allitem.DataTimeEpochTime | date:'yyyy/MM/dd':browserTimeZone}}</div>
                                             <div class="share">
                                                 <button type="button" ng-click="line()"><i class="fa-brands fa-line"></i></button>
                                                 <button type="button" ng-click="facebook()"><i class="fa-brands fa-facebook-f"></i></button>
                                             </div>
                                         </div>
-                                        <article class="new-article" ng-bind-html="item.Description"></article>
+                                        <article class="new-article" ng-bind-html="allitem.Description"></article>
                                     </div>
                                 </div>
                                 
@@ -186,14 +188,14 @@
                         </div>
                         <div class="col-12">
                             <div class="news-lisk-block-lists">
-                                <a ng-href="news-content-template.html?urlQuery={{item.Id}}" class="card-news d-md-flex" ng-repeat="item in newsRecommend | filter: {LanguageCode: lang} | limitTo: 3 | orderBy:'DataTime':reverse">
+                                <a ng-href="news-content-template.html?urlQuery={{item.uuidEncodeString}}" class="card-news d-md-flex" ng-repeat="item in recommend | orderBy :'DataTimeEpochTime' : reverse">
                                     <div class="card-news-img pr-0 pr-md-4">
                                         <figure>
-                                            <img ng-src="{{item.WebPic}}" alt="">
+                                            <img ng-src="{{item.picDownloadPath}}" alt="">
                                         </figure>
                                     </div>
                                     <div class="card-news-body">
-                                        <span class="date">{{item.DataTime | date: 'yyyy/MM/dd'}}</span>
+                                        <span class="date">{{item.DataTimeEpochTime | date:'yyyy/MM/dd':browserTimeZone}}</span>
                                         <h4>{{item.Name}}</h4>
                                         <p>{{item.Profile}}</p>
                                     </div>
@@ -202,7 +204,7 @@
                         </div>
                         <div class="col-12">
                             <div class="d-flex justify-content-center">
-                                <a href="news_new.html" class="link-outline-none-primary">更多新聞 <i class="fa-solid fa-arrow-left-long"></i></a>
+                                <a href="news_new.html" class="link-outline-none-primary">更多新聞 <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
