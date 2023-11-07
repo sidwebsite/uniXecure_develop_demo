@@ -13,7 +13,7 @@
         <title>unixecure</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.0.0/bootbox.min.js" integrity="sha512-PojrCbDABSedyqVLg8QawV5wHvWnAQ68P4DNDArqsI55yhqsKPh7dxbg0jxCoi0O62HWi1Gcm/OOwXwvKebQgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/newsContent.js?be8f6d76"></script><link href="css/style.css?e31be0c4" rel="stylesheet"></head>
+    <link rel="icon" href="favicon.ico"><script defer src="javascript/angular.js?02772354"></script><script defer src="javascript/angular-sanitize.js?5590300f"></script><script defer src="javascript/main.js?f290b205"></script><script defer src="javascript/newsContent.js?be8f6d76"></script><link href="css/style.css?d62e308a" rel="stylesheet"></head>
     <body>
         <!-- main starts -->
         <main class="main d-flex flex-column">
@@ -148,9 +148,7 @@
                                             <li class="breadcrumb-item active"><a href="news_new.html">新聞中心</a></li>
                                         </ul>
                                     </nav>
-                                    <div class="mb-5">
-                                        <h1 class="text-white">{{allitem.Name}}</h1>
-                                    </div>
+                                    <h1 class="text-white">{{allitem.Name}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +161,7 @@
                                 <div class="bg-white pt-3 pb-10">
                                     <div class="news-page-centont">
                                         <div class="d-flex mb-4 justify-content-between align-items-center">
-                                            <div class="date">{{allitem.DataTimeEpochTime | date:'yyyy/MM/dd':browserTimeZone}}</div>
+                                            <div class="date">{{allitem.DataTimeEpochTime | date:'yyyy / MM / dd':browserTimeZone}}</div>
                                             <div class="share">
                                                 <button type="button" ng-click="line()"><i class="fa-brands fa-line"></i></button>
                                                 <button type="button" ng-click="facebook()"><i class="fa-brands fa-facebook-f"></i></button>
@@ -195,7 +193,7 @@
                                         </figure>
                                     </div>
                                     <div class="card-news-body">
-                                        <span class="date">{{item.DataTimeEpochTime | date:'yyyy/MM/dd':browserTimeZone}}</span>
+                                        <span class="date">{{item.DataTimeEpochTime | date:'yyyy / MM / dd':browserTimeZone}}</span>
                                         <h4>{{item.Name}}</h4>
                                         <p>{{item.Profile}}</p>
                                     </div>
