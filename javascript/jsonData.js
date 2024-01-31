@@ -1,32 +1,218 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
+var __webpack_exports__ = {};
+;(function(angular) {
+    'use strict';
 
-/***/ "./src/javascript/jsonData.js":
-/*!************************************!*\
-  !*** ./src/javascript/jsonData.js ***!
-  \************************************/
-/***/ (() => {
+    let app = angular.module('myApp', ['ngSanitize']);
+    app.controller('getAppController', ['$scope', '$http', function($scope, $http) {
+        // news
+        $http.get("../json/news.json").then(function(response) {
+            $scope.news = response.data;
+            // 過濾data
+            $scope.newsScope = [];
+            $scope.eventsScope = [];
+            for (let i = 0; i < $scope.news.length; i++) {
+                const item = $scope.news[i];
+                if(item.LanguageCode === $scope.lang && item.Type === '1' && item.IsActive === '1') {
+                    $scope.newsScope.push(item);
+                } else if (item.LanguageCode === $scope.lang && item.Type === '2' && item.IsActive === '1') {
+                    $scope.eventsScope.push(item);
+                };
+            };
+            // 新聞中心排序
+            $scope.newsScope.sort((t1, t2) => (t1.DataTime < t2.DataTime) ? 1 : (t1.DataTime > t2.DataTime) ? -1 : 0);
 
-eval(";(function(angular) {\r\n    'use strict';\r\n\r\n    let app = angular.module('myApp', ['ngSanitize']);\r\n    app.controller('getAppController', ['$scope', '$http', function($scope, $http) {\r\n        // news\r\n        $http.get(\"../json/news.json\").then(function(response) {\r\n            $scope.news = response.data;\r\n            // 過濾data\r\n            $scope.newsScope = [];\r\n            $scope.eventsScope = [];\r\n            for (let i = 0; i < $scope.news.length; i++) {\r\n                const item = $scope.news[i];\r\n                if(item.LanguageCode === $scope.lang && item.Type === '1' && item.IsActive === '1') {\r\n                    $scope.newsScope.push(item);\r\n                } else if (item.LanguageCode === $scope.lang && item.Type === '2' && item.IsActive === '1') {\r\n                    $scope.eventsScope.push(item);\r\n                };\r\n            };\r\n            // 新聞中心排序\r\n            $scope.newsScope.sort((t1, t2) => (t1.DataTime < t2.DataTime) ? 1 : (t1.DataTime > t2.DataTime) ? -1 : 0);\r\n\r\n            // 新聞中心 pagination\r\n            $scope.curPage = 1;         // 當前頁碼\r\n            $scope.newsPageSize = 5;        // 顯示筆數\r\n            $scope.newsArr = [];            // 單頁資料存放\r\n            $scope.newsPages = [];          // 分頁頁碼模組\r\n            // 總頁數\r\n            $scope.newsTotalaPage = Math.ceil($scope.newsScope.length / $scope.newsPageSize);\r\n            // 顯示資料\r\n            $scope.newsDisplayList = function(page) {\r\n                page--;\r\n                let start = $scope.newsPageSize * page;\r\n                let end = start +  $scope.newsPageSize;\r\n                let paginatedItems = $scope.newsScope.slice(start, end);\r\n                $scope.newsArr = paginatedItems;\r\n            }\r\n            // 分頁模組\r\n            for (let i = 0; i < $scope.newsTotalaPage; i++) {\r\n                $scope.newsPages.push(i + 1);\r\n            };\r\n            // 當前頁碼\r\n            $scope.newsJump = function(indexPage) {\r\n                $scope.curPage = indexPage;\r\n                $scope.newsDisplayList(indexPage);\r\n                return $scope.curPage;\r\n            }\r\n            // 第一頁\r\n            $scope.newsFirst = function() {\r\n                $scope.curPage = 1;\r\n                $scope.newsDisplayList($scope.curPage);\r\n            }\r\n            // 上一頁\r\n            $scope.newsPrev = function(page) {\r\n                $scope.curPage = page - 1;\r\n                $scope.newsDisplayList($scope.curPage);\r\n            }\r\n            // 下一頁\r\n            $scope.newsNext = function(page) {\r\n                $scope.curPage = page + 1;\r\n                $scope.newsDisplayList($scope.curPage);\r\n            }\r\n            // 最後一頁\r\n            $scope.newsLast = function() {\r\n                $scope.curPage = $scope.newsTotalaPage;\r\n                $scope.newsDisplayList($scope.curPage);\r\n            }                \r\n            // 執行初始資料\r\n            $scope.newsDisplayList($scope.curPage);\r\n            // news recommend\r\n            $scope.newsRecommend = [];\r\n            for (let i = 0; i < 4; i++) {\r\n                const item = $scope.newsScope[i];\r\n                if(item.UUID !== $scope.urlIndex && item.LanguageCode === $scope.lang) $scope.newsRecommend.push(item);\r\n            }\r\n            // 行銷活動排序\r\n            $scope.eventsScope.sort((t1, t2) => (t1.DataTime < t2.DataTime) ? 1 : (t1.DataTime > t2.DataTime) ? -1 : 0);\r\n            // 行銷活動 pagination\r\n            $scope.disEvents = $scope.eventsScope.slice(1, $scope.eventsScope.length);\r\n            $scope.eventsPageSize = 6;        // 顯示筆數\r\n            $scope.eventsArr = [];            // 單頁資料存放\r\n            $scope.eventsPages = [];          // 分頁頁碼模組\r\n\r\n            // 總頁數\r\n            $scope.eventsTotalaPage = Math.ceil($scope.disEvents.length/ $scope.eventsPageSize);\r\n            // 顯示資料\r\n            $scope.eventsDisplayList = function(page) {\r\n                page--;\r\n                let start = $scope.eventsPageSize * page;\r\n                let end = start + $scope.eventsPageSize;\r\n                let paginatedItems = $scope.disEvents.slice(start, end);\r\n                $scope.eventsArr = paginatedItems;\r\n            }\r\n            // 分頁模組\r\n            for (let i = 0; i < $scope.eventsTotalaPage; i++) {\r\n                $scope.eventsPages.push(i + 1);\r\n            };\r\n            // 當前頁碼\r\n            $scope.eventsJump = function(indexPage) {\r\n                $scope.curPage = indexPage;\r\n                $scope.eventsDisplayList(indexPage);\r\n                return $scope.curPage;\r\n            }\r\n            // 第一頁\r\n            $scope.eventsFirst = function() {\r\n                $scope.curPage = 1;\r\n                $scope.eventsDisplayList($scope.curPage);\r\n            }\r\n            // 上一頁\r\n            $scope.eventsPrev = function(page) {\r\n                $scope.curPage = page - 1;\r\n                $scope.eventsDisplayList($scope.curPage);\r\n            }\r\n            // 下一頁\r\n            $scope.eventsNext = function(page) {\r\n                $scope.curPage = page + 1;\r\n                $scope.eventsDisplayList($scope.curPage);\r\n            }\r\n            // 最後一頁\r\n            $scope.eventsLast = function() {\r\n                $scope.curPage = $scope.eventsTotalaPage;\r\n                $scope.eventsDisplayList($scope.curPage);\r\n            }                \r\n            // 執行初始資料\r\n            $scope.eventsDisplayList($scope.curPage);\r\n            // events recommend\r\n            $scope.eventsRecommend = [];\r\n            for (let i = 0; i < $scope.eventsScope.length; i++) {\r\n                const item = $scope.eventsScope[i];\r\n                if(item.UUID !== $scope.urlIndex && item.LanguageCode === $scope.lang) $scope.eventsRecommend.push(item);\r\n            }\r\n        });\r\n        // // events\r\n        // $http.get(\"../json/events.json\").then(function(response) {\r\n        //     $scope.events = response.data;\r\n        // });\r\n        // // cases\r\n        // $http.get(\"../json/cases.json\").then(function(response) {\r\n        //     $scope.cases = response.data;\r\n        //     // 成功案例 pagination\r\n        //     $scope.casesPageSize = 5;        // 顯示筆數\r\n        //     $scope.casesArr = [];            // 單頁資料存放\r\n        //     $scope.casesPages = [];          // 分頁頁碼模組\r\n        //     // 總頁數\r\n        //     $scope.casesTotalaPage = Math.ceil($scope.cases.length / $scope.casesPageSize);\r\n        //     // 顯示資料\r\n        //     $scope.casesDisplayList = function(page) {\r\n        //         page--;\r\n        //         let start = $scope.casesPageSize * page;\r\n        //         let end = start + $scope.casesPageSize;\r\n        //         let paginatedItems = $scope.cases.slice(start, end);\r\n        //         $scope.casesArr = paginatedItems;\r\n        //     }\r\n        //     // 分頁模組\r\n        //     for (let i = 0; i < $scope.casesTotalaPage; i++) {\r\n        //         $scope.casesPages.push(i + 1);\r\n        //     };\r\n        //     // 當前頁碼\r\n        //     $scope.casesJump = function(indexPage) {\r\n        //         $scope.curPage = indexPage;\r\n        //         $scope.casesDisplayList(indexPage);\r\n        //         return $scope.curPage;\r\n        //     }\r\n        //     // 第一頁\r\n        //     $scope.casesFirst = function() {\r\n        //         $scope.curPage = 1;\r\n        //         $scope.casesDisplayList($scope.curPage);\r\n        //     }\r\n        //     // 上一頁\r\n        //     $scope.casesPrev = function(page) {\r\n        //         $scope.curPage = page - 1;\r\n        //         $scope.casesDisplayList($scope.curPage);\r\n        //     }\r\n        //     // 下一頁\r\n        //     $scope.casesNext = function(page) {\r\n        //         $scope.curPage = page + 1;\r\n        //         $scope.casesDisplayList($scope.curPage);\r\n        //     }\r\n        //     // 最後一頁\r\n        //     $scope.casesLast = function() {\r\n        //         $scope.curPage = $scope.casesTotalaPage;\r\n        //         $scope.casesDisplayList($scope.curPage);\r\n        //     }                \r\n        //     // 執行初始資料\r\n        //     $scope.casesDisplayList($scope.curPage);\r\n        //     // cases recommend\r\n        //     $scope.casesRecommend = [];\r\n        //     for (let i = 0; i < $scope.cases.length; i++) {\r\n        //         const item = $scope.cases[i];\r\n        //         if(item.id !== $scope.urlIndex) $scope.casesRecommend.push(item);\r\n        //     }\r\n        // });\r\n        // lang\r\n        $scope.lang = document.documentElement.lang;\r\n        // url\r\n        $scope.pageTitle = window.document.title;\r\n        $scope.pageUrl = new URL(window.location);\r\n        $scope.urlIndex = $scope.pageUrl.search.toString().split(\"?urlQuery=\").pop();\r\n        // share \r\n        $scope.popWidth = 600,\r\n        $scope.popHeight = 480,\r\n        $scope.left = window.innerWidth / 2 - $scope.popWidth / 2 + window.screenX,\r\n        $scope.top = window.innerHeight / 2 - $scope.popHeight / 2 + window.screenY,\r\n        $scope.popParams = 'scrollbars=no, width=' + $scope.popWidth + ', height=' + $scope.popHeight + ', top=' + $scope.top + ', left=' + $scope.left,\r\n        \r\n        $scope.facebook = function() {\r\n            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent($scope.pageUrl.href), 'facebook-share-dialog', $scope.popParams);\r\n            return false;\r\n        };\r\n        $scope.line = function() {\r\n            window.open('http://line.me/R/msg/text/?' + encodeURIComponent($scope.pageTitle + ' ' + $scope.pageUrl.href), 'targetWindow', $scope.popParams)\r\n        }\r\n    }]);\r\n})(window.angular);\n\n//# sourceURL=webpack://unixecure_portal/./src/javascript/jsonData.js?");
+            // 新聞中心 pagination
+            $scope.curPage = 1;         // 當前頁碼
+            $scope.newsPageSize = 5;        // 顯示筆數
+            $scope.newsArr = [];            // 單頁資料存放
+            $scope.newsPages = [];          // 分頁頁碼模組
+            // 總頁數
+            $scope.newsTotalaPage = Math.ceil($scope.newsScope.length / $scope.newsPageSize);
+            // 顯示資料
+            $scope.newsDisplayList = function(page) {
+                page--;
+                let start = $scope.newsPageSize * page;
+                let end = start +  $scope.newsPageSize;
+                let paginatedItems = $scope.newsScope.slice(start, end);
+                $scope.newsArr = paginatedItems;
+            }
+            // 分頁模組
+            for (let i = 0; i < $scope.newsTotalaPage; i++) {
+                $scope.newsPages.push(i + 1);
+            };
+            // 當前頁碼
+            $scope.newsJump = function(indexPage) {
+                $scope.curPage = indexPage;
+                $scope.newsDisplayList(indexPage);
+                return $scope.curPage;
+            }
+            // 第一頁
+            $scope.newsFirst = function() {
+                $scope.curPage = 1;
+                $scope.newsDisplayList($scope.curPage);
+            }
+            // 上一頁
+            $scope.newsPrev = function(page) {
+                $scope.curPage = page - 1;
+                $scope.newsDisplayList($scope.curPage);
+            }
+            // 下一頁
+            $scope.newsNext = function(page) {
+                $scope.curPage = page + 1;
+                $scope.newsDisplayList($scope.curPage);
+            }
+            // 最後一頁
+            $scope.newsLast = function() {
+                $scope.curPage = $scope.newsTotalaPage;
+                $scope.newsDisplayList($scope.curPage);
+            }                
+            // 執行初始資料
+            $scope.newsDisplayList($scope.curPage);
+            // news recommend
+            $scope.newsRecommend = [];
+            for (let i = 0; i < 4; i++) {
+                const item = $scope.newsScope[i];
+                if(item.UUID !== $scope.urlIndex && item.LanguageCode === $scope.lang) $scope.newsRecommend.push(item);
+            }
+            // 行銷活動排序
+            $scope.eventsScope.sort((t1, t2) => (t1.DataTime < t2.DataTime) ? 1 : (t1.DataTime > t2.DataTime) ? -1 : 0);
+            // 行銷活動 pagination
+            $scope.disEvents = $scope.eventsScope.slice(1, $scope.eventsScope.length);
+            $scope.eventsPageSize = 6;        // 顯示筆數
+            $scope.eventsArr = [];            // 單頁資料存放
+            $scope.eventsPages = [];          // 分頁頁碼模組
 
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/javascript/jsonData.js"]();
-/******/ 	
+            // 總頁數
+            $scope.eventsTotalaPage = Math.ceil($scope.disEvents.length/ $scope.eventsPageSize);
+            // 顯示資料
+            $scope.eventsDisplayList = function(page) {
+                page--;
+                let start = $scope.eventsPageSize * page;
+                let end = start + $scope.eventsPageSize;
+                let paginatedItems = $scope.disEvents.slice(start, end);
+                $scope.eventsArr = paginatedItems;
+            }
+            // 分頁模組
+            for (let i = 0; i < $scope.eventsTotalaPage; i++) {
+                $scope.eventsPages.push(i + 1);
+            };
+            // 當前頁碼
+            $scope.eventsJump = function(indexPage) {
+                $scope.curPage = indexPage;
+                $scope.eventsDisplayList(indexPage);
+                return $scope.curPage;
+            }
+            // 第一頁
+            $scope.eventsFirst = function() {
+                $scope.curPage = 1;
+                $scope.eventsDisplayList($scope.curPage);
+            }
+            // 上一頁
+            $scope.eventsPrev = function(page) {
+                $scope.curPage = page - 1;
+                $scope.eventsDisplayList($scope.curPage);
+            }
+            // 下一頁
+            $scope.eventsNext = function(page) {
+                $scope.curPage = page + 1;
+                $scope.eventsDisplayList($scope.curPage);
+            }
+            // 最後一頁
+            $scope.eventsLast = function() {
+                $scope.curPage = $scope.eventsTotalaPage;
+                $scope.eventsDisplayList($scope.curPage);
+            }                
+            // 執行初始資料
+            $scope.eventsDisplayList($scope.curPage);
+            // events recommend
+            $scope.eventsRecommend = [];
+            for (let i = 0; i < $scope.eventsScope.length; i++) {
+                const item = $scope.eventsScope[i];
+                if(item.UUID !== $scope.urlIndex && item.LanguageCode === $scope.lang) $scope.eventsRecommend.push(item);
+            }
+        });
+        // // events
+        // $http.get("../json/events.json").then(function(response) {
+        //     $scope.events = response.data;
+        // });
+        // // cases
+        // $http.get("../json/cases.json").then(function(response) {
+        //     $scope.cases = response.data;
+        //     // 成功案例 pagination
+        //     $scope.casesPageSize = 5;        // 顯示筆數
+        //     $scope.casesArr = [];            // 單頁資料存放
+        //     $scope.casesPages = [];          // 分頁頁碼模組
+        //     // 總頁數
+        //     $scope.casesTotalaPage = Math.ceil($scope.cases.length / $scope.casesPageSize);
+        //     // 顯示資料
+        //     $scope.casesDisplayList = function(page) {
+        //         page--;
+        //         let start = $scope.casesPageSize * page;
+        //         let end = start + $scope.casesPageSize;
+        //         let paginatedItems = $scope.cases.slice(start, end);
+        //         $scope.casesArr = paginatedItems;
+        //     }
+        //     // 分頁模組
+        //     for (let i = 0; i < $scope.casesTotalaPage; i++) {
+        //         $scope.casesPages.push(i + 1);
+        //     };
+        //     // 當前頁碼
+        //     $scope.casesJump = function(indexPage) {
+        //         $scope.curPage = indexPage;
+        //         $scope.casesDisplayList(indexPage);
+        //         return $scope.curPage;
+        //     }
+        //     // 第一頁
+        //     $scope.casesFirst = function() {
+        //         $scope.curPage = 1;
+        //         $scope.casesDisplayList($scope.curPage);
+        //     }
+        //     // 上一頁
+        //     $scope.casesPrev = function(page) {
+        //         $scope.curPage = page - 1;
+        //         $scope.casesDisplayList($scope.curPage);
+        //     }
+        //     // 下一頁
+        //     $scope.casesNext = function(page) {
+        //         $scope.curPage = page + 1;
+        //         $scope.casesDisplayList($scope.curPage);
+        //     }
+        //     // 最後一頁
+        //     $scope.casesLast = function() {
+        //         $scope.curPage = $scope.casesTotalaPage;
+        //         $scope.casesDisplayList($scope.curPage);
+        //     }                
+        //     // 執行初始資料
+        //     $scope.casesDisplayList($scope.curPage);
+        //     // cases recommend
+        //     $scope.casesRecommend = [];
+        //     for (let i = 0; i < $scope.cases.length; i++) {
+        //         const item = $scope.cases[i];
+        //         if(item.id !== $scope.urlIndex) $scope.casesRecommend.push(item);
+        //     }
+        // });
+        // lang
+        $scope.lang = document.documentElement.lang;
+        // url
+        $scope.pageTitle = window.document.title;
+        $scope.pageUrl = new URL(window.location);
+        $scope.urlIndex = $scope.pageUrl.search.toString().split("?urlQuery=").pop();
+        // share 
+        $scope.popWidth = 600,
+        $scope.popHeight = 480,
+        $scope.left = window.innerWidth / 2 - $scope.popWidth / 2 + window.screenX,
+        $scope.top = window.innerHeight / 2 - $scope.popHeight / 2 + window.screenY,
+        $scope.popParams = 'scrollbars=no, width=' + $scope.popWidth + ', height=' + $scope.popHeight + ', top=' + $scope.top + ', left=' + $scope.left,
+        
+        $scope.facebook = function() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent($scope.pageUrl.href), 'facebook-share-dialog', $scope.popParams);
+            return false;
+        };
+        $scope.line = function() {
+            window.open('http://line.me/R/msg/text/?' + encodeURIComponent($scope.pageTitle + ' ' + $scope.pageUrl.href), 'targetWindow', $scope.popParams)
+        }
+    }]);
+})(window.angular);
 /******/ })()
 ;
