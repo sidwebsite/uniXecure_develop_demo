@@ -4593,6 +4593,10 @@ button.swiper-pagination-bullet {
   height: auto !important;
 }
 
+.text-decoration-underline {
+  text-decoration: underline !important;
+}
+
 :root {
   --primary: #3c48b9;
   --secondary: #d08d00;
@@ -14047,7 +14051,7 @@ nav .wrapper .navbar > ul > li .dropdown-menu::before {
 
 .agent-products-content-banner {
   padding-top: 74px;
-  height: 75vh;
+  height: 70vh;
 }
 .agent-products-content-banner article > h1 {
   max-width: 1000px;
@@ -15025,7 +15029,7 @@ nav .wrapper .navbar > ul > li .dropdown-menu::before {
 
 @media screen and (max-width: 1500px) {
   .agent-products-content-banner {
-    height: 100vh;
+    height: 65vh;
   }
 }
 @media (max-width: 1401px) {
