@@ -14051,7 +14051,7 @@ nav .wrapper .navbar > ul > li .dropdown-menu::before {
 
 .agent-products-content-banner {
   padding-top: 74px;
-  height: 70vh;
+  padding-bottom: 80px;
 }
 .agent-products-content-banner article > h1 {
   max-width: 1000px;
@@ -15027,17 +15027,6 @@ nav .wrapper .navbar > ul > li .dropdown-menu::before {
   margin-bottom: 40px;
 }
 
-@media screen and (max-width: 1500px) {
-  .agent-products-content-banner {
-    height: 65vh;
-  }
-}
-@media (max-width: 1401px) {
-  .agent-products-content-banner {
-    height: auto;
-    padding-bottom: 80px;
-  }
-}
 @media screen and (max-width: 1025px) {
   .page-header .page-header-body {
     margin-left: 15px;
