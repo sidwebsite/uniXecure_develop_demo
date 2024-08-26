@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="getAppController" lang="zh-TW">
+    <head>
+        <meta charset="utf-8"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TG1WB7W2Y3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TG1WB7W2Y3');
+</script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>unixecure</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.0.0/bootbox.min.js" integrity="sha512-PojrCbDABSedyqVLg8QawV5wHvWnAQ68P4DNDArqsI55yhqsKPh7dxbg0jxCoi0O62HWi1Gcm/OOwXwvKebQgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" href="../favicon.ico"><script defer src="../javascript/main.js?141a049f"></script><script defer src="../javascript/share.js?5a13b669"></script><link href="../css/style.css?5515641c" rel="stylesheet"></head>
+    <body>
+        <!-- main starts -->
+        <main class="main d-flex flex-column">
+            <!-- headerc starts -->
+            <header class="header">
+                <nav>
+                    <div class="wrapper">
+                        <div class="logo">
+                            <a href="../index.html"><img src="../images/logo.png" alt="logo"></a>
+                        </div>
+                        <div class="navbar">
+                            <ul>
+                                <li>
+                                    <a href="#">關於我們 <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">關於我們</p>
+                                                <ul>
+                                                    <li><a href="../Introduction.html">公司簡介</a></li>
+                                                    <li><a href="../solution-white-paper.html">報告書專區</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">服務項目 <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">資安監控維運中心</p>
+                                                <ul>
+                                                    <li><a href="../serve-moc.html">MOC 資安監控維運中心</a></li>
+                                                </ul>
+                                                <p class="mb-3">端點防護</p>
+                                                <ul>
+                                                    <li><a href="../serve-sivas.html">SIVAS 資安弱點通報系統</a></li>
+                                                    <!-- <li><a href="edr.html">EDR 端點資安管控監管平台</a></li> -->
+                                                    <!-- <li><a href="ssc.html">SSC 政府組態基準檢測系統</a></li> -->
+                                                </ul>
+                                                <p class="mb-3">中心端監控</p>
+                                                <ul>
+                                                    <li><a href="../serve-srmas.html">SRMAS 系統資源監控管理平台</a></li>
+                                                    <!-- <li><a href="soc.html">SOC 資通安全威脅偵測管理</a></li> -->
+                                                    <li><a href="../serve-lucas.html">LUCAS 跡證保存系統</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">人員資安意識： HEIS 資安意識人因分析系統</p>
+                                                <ul>
+                                                    <li><a href="../serve-heis.html">HEIS 資安意識人因分析系統</a></li>
+                                                    <li><a href="../serve-sesc.html">SESC 次世代郵件安全雲</a></li>
+                                                </ul>
+                                                <p class="mb-3">資安服務</p>
+                                                <ul>
+                                                    <li><a href="../serve-cse.html">資安健診</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a class="active" href="../contract.html">共同供應契約</a></li>
+                                <li><a href="../agent-products-index.html">代理產品</a></li>
+                                <li>
+                                    <a href="#">最新消息 <i class="fa-sharp fa-solid fa-angle-down"></i></a>
+                                    <div class="dropdown-menu">
+                                        <span class="d-lg-none d-inline-block mb-3 menu-back"><i class="fa-solid fa-angle-left"></i> Back</span>
+                                        <div class="d-flex my-lg-5 my-0">
+                                            <div class="mr-lg-5 mr-0">
+                                                <p class="mb-3">最新消息</p>
+                                                <ul>
+                                                    <li><a href="../news_new.html">新聞中心</a></li>
+                                                    <li><a href="../events.html">行銷活動</a></li>
+                                                    <li><a href="../cases.html">成功案例</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="../contact.html">聯絡我們</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="login-language d-flex align-items-center">
+                        <!-- <a href="#" class="link-primary"><i class="fa-solid fa-user"></i> 會員登入</a> -->
+                        <div class="language-container">
+                            <a href="#" class="language-btn ml-3 fa-sharp fa-solid fa-globe"></a>
+                            <ul class="language">
+                                <li><a href="../index.html" class="active">繁體中文</a></li>
+                                <li><a href="../index-en.html">English</a></li>
+                                <li><a href="../index-ja.html">日本語</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="toggle-navbar ml-3 fa-solid fa-bars"></a>
+                    </div>
+                </nav>
+            </header>
+            <!-- headerc ends -->
+            <!-- content starts -->
+            <div class="content contract-bg flex-grow-1 bg-gray-50">
+                <section class="pb-9">
+                    <!-- header starts -->
+                    <div class="page-header pt-0 pb-5">
+                        <div class="container pt-4">
+                            <nav class="h-auto">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="../index.html">首頁</a></li>
+                                    <li class="breadcrumb-item"><a href="../contract.html">共同供應契約</a></li>
+                                    <li class="breadcrumb-item active">eLock 112年第一次電腦軟體共同供應契約採購(1120201)</li>
+                                </ul>
+                            </nav>
+                            <h1 class="text-center text-gray-800">eLock 112年第一次電腦軟體共同供應契約採購(1120201)</h1>
+                        </div>
+                    </div>
+                    <!-- header ends -->
+                    <!-- content starts -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bg-gray-50-50 border border-white px-3 py-2 contract-content">
+                                    <div class="tr">
+                                        <div class="th">契約編號</div>
+                                        <div class="td">1130201</div>
+                                    </div>
+                                    <div class="tr">
+                                        <div class="th">契約起始日期</div>
+                                        <div class="td">113/04/30</div>
+                                        <div class="th border-bottom-0">契約終止日期</div>
+                                        <div class="td border-bottom-0">114/04/29</div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive bg-gray-50-50 border border-white px-3 py-2">
+                                    <table class="table contract-table">
+                                        <thead>
+                                            <tr>
+                                                <th>組別</th>
+                                                <th>項次</th>
+                                                <th>廠牌</th>
+                                                <th>品項</th>
+                                                <th>級距</th>
+                                                <th>決標價</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>15</td>
+                                                <td>eLock</td>
+                                                <td>eLock WebAlarm System Professional (1 console中控 + 1 Server軟體授權)/一年訂閱授權</td>
+                                                <td>1-100</td>
+                                                <td>299,292</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>16</td>
+                                                <td>eLock</td>
+                                                <td>eLock WebAlarm System Professional (1 console中控 + 1 Server軟體授權)/一年買斷授權MA</td>
+                                                <td>1-100</td>
+                                                <td>92,214</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>174</td>
+                                                <td>eLock</td>
+                                                <td>eLock WebAlarm System Professional (加購1 Server軟體授權)/ 一年訂閱授權</td>
+                                                <td>1-100</td>
+                                                <td>79,373</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>18</td>
+                                                <td>eLock</td>
+                                                <td>eLock WebAlarm System Professional (加購1 Server軟體授權)/ 一年買斷授權MA</td>
+                                                <td>1-5</td>
+                                                <td>24,317</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="contract-download">
+                                    <a href="../files/1120201全區公告_eLock.xlsx" download>檔案下載</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- content ends -->
+                </section>
+                <!-- list block starts -->
+                <section class="section events-lisk-block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 class="text-center mb-6">更多契約</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- item -->
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <a href="../contract/contract-content-15.html" title="Claroty 112年第一次電腦軟體共同供應契約採購(1120201)" class="contract-card">
+                                    <div class="card-body flex-grow-1 d-flex flex-column">
+                                        <ul class="card-logo d-flex">
+                                            <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAcCAYAAADfjMc9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANpSURBVHgB7ZZbiE1RGMf/a+195sw5zLiXMi5NIUIKSUnkOjxILpEUUTxQeOFFxguKFykUQm7lkhgcHowQLwglGnczktvEhLk4++zl/529Tu0OM2dePJj2v37tddnfty7ft9beQKRIkSJFihTpX0mFK7XJS6MBp8LxnSOek16vPOzu1zLzJTqIsot9jFNFpcmSPSwul3oa/pgY9F1lUJM2/vTy5llv0QGkH+Fqp9JEyTXIQg2a+Dzoe6oRMI+NMtWO1s9rE6l1bfhIkM6kU6gt3sb7riW/rdjitmIngSnKa4uH7HKIYn/xU6y7Jb0ldDOela+e541TMLVxVx02Rn1XRvVSYqiwoy5R1SfPeAC5QX6KLfli2/uRH2hdYpPKa5tA6iz15DLpGeqXjPtAJBi3SH/bftzayHifbLk3mQ1JWCBp31tIzmoDtVpqTNlKtyi2lPUtMKqnhhpuFOaxa48Ptd0o9+H7ootDQhOoIhcRRDZmn4XEOwFdSFcyKtReTXpZpE8itMz2ycQ3kckIInmenLMLmWdtnpOZtiybcoa8I4tJN7KZrNEaerB4/OU7KRizUilU922KD/Idd2x2KGN6aPhLZKczrp5vJ1CGIKI7SAvar7VkFzkgg7fyjkEQpVxUKsg2BJHyyE4EKVqOwmNtJFvJCfKKkTW+9GiVSUPOhUGDwiTPeJmmwIYxNjq7IOMrP+SsJNvZfg0lE8lJcgxBxAbavknkgUWiNIwcRG4CQPeQH1moZEdxgfFkc06TKQg2C7LYJ1JwlJprDM5wW+fUJVJ3tPbvZU2U/1lp/wJL9T70cetIUkRu6A12IqV28TnJZdI7hGgFgojK+ZKs2EtW2b64XdRcBJH/ZscQHbG20idntZJ8JPdRWC/IMwQZwV0y+iRDN5JsShszi9fdDy54Guf7hv1P+VztG0ktp2xA87T3IUdyHraTuwhSLoMgvUUSoSpblotrERlhJ53TPrt4Oe8N1s8rIp/AcQjOoFxUt62dRKcvkY2fgSDdc5Io1uNPid+aXEW9xvViJ9lCB2aqfHr4uTnKfdilXCWH/CbbV/LSquzfWLEF/7myPxUNpVe6f8uYvbyRF0g991PB4hsvgxnlLRU16ADK+11MjWEkZzMhD8FVq7SO7S/7PuUZIkWKFClSpEiRCug3DXoDnz2PmVYAAAAASUVORK5CYII=" alt="claroty"></li>
+                                        </ul>
+                                        <h5 class="card-title flex-grow-1 d-flex align-items-center">Claroty 112年第一次電腦軟體共同供應契約採購(1120201)</h5>
+                                        <ul class="list-unstyled text-gray-400">
+                                            <li>契約編號：1130201</li>
+                                            <li>契約期間：113/04/30-114/04/29</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        詳細內容 <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- item -->
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <a href="../contracts/contract_page_14.html" title="Rapixus 112年第一次電腦軟體共同供應契約採購(1120201)" class="contract-card">
+                                    <div class="card-body flex-grow-1 d-flex flex-column">
+                                        <ul class="card-logo d-flex">
+                                            <li><img src="../images/product/rapixus_small.png" alt="rapixus"></li>
+                                        </ul>
+                                        <h5 class="card-title limitLines-2 flex-grow-1 d-flex align-items-center">Rapixus 112年第一次電腦軟體共同供應契約採購(1120201)</h5>
+                                        <ul class="list-unstyled text-gray-400">
+                                            <li>契約編號：1130201</li>
+                                            <li>契約期間：113/04/30-114/04/29</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        詳細內容 <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- item -->
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <a href="../contracts/contract_page_13.html" title="eLock 112年第一次電腦軟體共同供應契約採購(1120201)" class="contract-card">
+                                    <div class="card-body flex-grow-1 d-flex flex-column">
+                                        <ul class="card-logo d-flex">
+                                            <li><img src="../images/product/eLock_small.png" alt="eLock"></li>
+                                        </ul>
+                                        <h5 class="card-title limitLines-2 flex-grow-1 d-flex align-items-center">eLock 112年第一次電腦軟體共同供應契約採購(1120201)</h5>
+                                        <ul class="list-unstyled text-gray-400">
+                                            <li>契約編號：1130201</li>
+                                            <li>契約期間：113/04/30-114/04/29</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        詳細內容 <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- list block ends -->
+            </div>
+            <!-- content ends -->
+            <!-- footer starts -->
+            <footer class="footer">
+                <!-- contact starts -->
+                <section class="footer-contact">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="text-right d-none d-md-block">Contact</h1>
+                                <div class="contact">
+                                    <div class="contact-bg"></div>
+                                    <div>企業方案 IT 服務 / 解決方案諮詢<br />歡迎聯繫智慧資安</div>
+                                    <a href="contact.html" class="link-secondary">關於我們</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- contact ends -->
+                <!-- content starts -->
+                <section class="footer-content my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center">
+                                    <div class="mb-3">
+                                        <img src="../images/footer-logo.png" alt="">
+                                    </div>
+                                    <div class="shart">
+                                        <a href="https://www.youtube.com/@unixecure3203" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="https://www.facebook.com/uniXecure/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <!-- <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a> -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="d-flex  flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">服務信箱</div>
+                                    <div><a href="mailto:servicedesk@unixecure.com.tw" class="footer-mail">servicedesk@unixecure.com.tw</a></div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">臺北辦公室</div>
+                                    <div class="mr-3">114 臺北市內湖區基湖路 35 巷 13 號巴黎科技大樓 8 樓 <a href="https://goo.gl/maps/LDBJQvJMV3gkNSGAA" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>電話：02-8798-6088</div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">臺中辦公室</div>
+                                    <div class="mr-3">407 臺中市西屯區台灣大道 3 段 660 號 6 樓之 3 <a href="https://goo.gl/maps/8FYsL5VeEQhXjuxH6" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>電話：04-24523928 分機 300、301、302</div>
+                                </div>
+                                <div class="d-flex flex-column flex-lg-row mb-3">
+                                    <div class="mr-3">臺南辦公室</div>
+                                    <div class="mr-3">711 臺南市歸仁區歸仁十三路一段６號 3 樓 B309 室 <a href="https://goo.gl/maps/SK5XkyW9DXzEFPx39" target="_blank" class="ml-2 link-warning"><i class="fa-sharp fa-solid fa-location-dot"></i></a></div>
+                                    <div>電話：06-3033-018</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-md-row justify-content-between">
+                                    <a href="copyright-privacy.html" class="copyright">著作權及隱私權聲明</a>
+                                    <div><span class="mr-3">精誠集團</span>智慧資安科技股份有限公司 © <span class="year"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- content ends -->
+            </footer>
+            <!-- footer ends -->
+        </main>
+        <!-- main ends -->
+        <!-- go top -->
+        <a href="#" class="btn gotop">
+            <i class="fa-solid fa-arrow-up-long"></i>
+        </a>
+    </body>
+</html>
